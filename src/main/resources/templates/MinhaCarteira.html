@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha carteira</title>
+    <link rel="stylesheet" href="./assets/css/nav-bar.css">
+    <link rel="stylesheet" href="./assets/css/profile.css">
+    <link rel="stylesheet" href="./assets/css/transferir.css">
+    <link rel="stylesheet" href="./assets/css/MinhaCarteira.css">
+</head>
+
+<body>
+	<nav th:include="_template :: menu"></nav>
+
+    <div class="container-div">
+
+    </div>
+
+    <div class="container">
+
+        <div class="left-div">
+
+            <!-- LEFT MENU -->
+            <div th:include="_template-sub :: sub-menu"></div>
+        </div>
+
+        <div class="right-div">
+
+            <div class="div-saldo">
+
+
+                <div style="padding: 1rem;">Saldo em carteira</div>
+                <input name="vd_ga" id="vd_ga" class="real input_geral" type="text" disabled value="456679" style="display:flex;color:aliceblue;text-align:center;font-size:40px;background-color:rgba(255, 255, 255, 0);" />
+
+
+            </div>
+
+            <div class="dados-conta">
+
+                <form action="" class="form">
+
+                    <div class="aviso">
+
+                        <h3>AVISO IMPORTANTE:</h3>
+                        <p>A conta cadastrada deve ser no mesmo CPF que o titular do cadastro na plataforma Cheap Chap</p>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="">CPF titular:</label>
+                        <input type="text" value="482.859.678-08">
+
+                        <hr>
+
+                        <label for="">Titular da conta:</label>
+                        <input type="text" value="Bruno Martin">
+
+                        <label for="">Banco:</label>
+                        <select name="" id="">
+                            <option value="">Selecione o banco</option>
+                            <option value="">Banco do brasil</option>
+                            <option value="">Nubank</option>
+                            <option value="">Bradesco</option>
+                            <option value="">Itaú</option>
+                        </select>
+
+                        <div class="agencia-digito">
+                            <div class="agencia">
+
+                                <label for="">Agência:</label>
+                                <input type="text" class="input-agencia">
+                            </div>
+
+                            <div class="agencia">
+
+                                <label for="">Dígito:</label>
+                                <input type="text" class="input-digito">
+                            </div>
+                        </div>
+
+                        <div class="agencia-digito">
+                            <div class="agencia">
+
+                                <label for="">Conta:</label>
+                                <input type="text" class="input-agencia">
+                            </div>
+
+                            <div class="agencia">
+
+                                <label for="">Dígito:</label>
+                                <input type="text" class="input-digito">
+                            </div>
+                        </div>
+
+                        <label for="">Banco:</label>
+                        <select name="" id="">
+                            <option value="">Selecione o tipo de banco</option>
+                            <option value="">Conta corrente</option>
+                            <option value="">Conta poupança</option>
+                        </select>
+
+                        <button type="submit" class="BuyBtton">Salvar</div>
+                        </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.js"></script>
+    <script>
+         $(document).ready(function(){
+                $(".real").mask('#.##0,00', {
+                    reverse: true
+                    });
+
+                    function calculateValue() {
+                        $('#vd_ga').val().replace(',', '.');
+                    }
+
+                    function convertToCurrency(value) {
+                    return value.toLocaleString("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
+                        minimumFractionDigits: 2
+                    })
+                    }
+            });
+    </script>
+    <script src="./assets/js/nav-bar.js"></script>
+</body>
+</html>

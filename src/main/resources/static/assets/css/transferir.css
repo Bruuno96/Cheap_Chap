@@ -1,0 +1,22 @@
+.form-group{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.dados-conta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+
+    justify-content: center;
+}
+
+.BuyBtton{
+    margin-top:1rem;
+}
+

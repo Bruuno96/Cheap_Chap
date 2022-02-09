@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/estilo-lista-eventos.css">
+    <link rel="stylesheet" href="assets/css/Filter.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/Profile-Card.css">
+    <link rel="stylesheet" href="./assets/css/nav-bar.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+	<nav th:include="_template :: menu"></nav>
+	
+   <!--  <nav>
+        <a class="logo" href="/"><img src="./assets/img/logo-horizontal.png" alt="" srcset=""></a>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="CategoriaEvento.html">Eventos</a></li>
+            <li><a href="CategoriaRestaurante.html">Restaurantes</a></li>
+            <li><a href="Smarticket.html">Smarticket</a></li>
+            <li><a href="MenuDigital.html">Menu Digital</a></li>
+            <li><a href="MinhaCarteira.html">Minha Área</a></li>
+            <li><a href="#">Favoritos</a></li>
+
+
+        </ul>
+
+        <img src="./assets/img/perfil.jpg" style="width:30px; border-radius: 20px;" alt="" srcset="">
+
+    </nav> -->
+
+    <div class="menu-space"> </div>
+
+    <div class="evento-destaque">
+
+    </div>
+
+
+    <div class="container" style="display:flex">
+
+        <div class="divEvento">
+            <ul>
+                <img src="./assets/img/3 - pop.jpg" class="img-responsive">
+                <li>Grupo Revelação</li>
+                <li class="local">28 de Outubro de 2021</li>
+                <li>Villa country</li>
+                <div class="more-details">
+                    <a href="/more-Details-Events">Mais detalhes</a>
+                </div>
+            </ul>
+        </div>
+
+
+
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/button-materialize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="./assets/js/nav-bar.js"></script>
+</body>
+
+</html>

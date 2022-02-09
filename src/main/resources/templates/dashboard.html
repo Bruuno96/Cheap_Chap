@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/nav-bar-dash.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav th:include="_template-dashboard :: menu-dashboard"></nav>
+
+    <div class="container">
+
+        <div class="graphic">
+
+            <div>
+                <canvas id="myChart" style="padding-left: 30px; padding-top: 5rem; padding-right:5rem;"></canvas>
+            </div>              
+
+        </div>
+
+        <div class="right-div">
+
+            <div class="table">
+
+                <div>
+                    <h2>Faturamento Mensal de Janeiro</h2>
+                </div>
+                
+
+                  <table style="margin-top: 2rem;">
+                    <tr>
+                      <th>Tipo</th>
+                      <th>Valor Unitário</th>
+                      <th>Quantidade vendida</th>
+                      <th>Total</th>
+                    </tr>
+                    <tr>
+                      <td>Masculino</td>
+                      <td>R$ 30,00</td>
+                      <td>100</td>
+                      <td>R$ 3.000,00</td>
+
+                    </tr>
+                    <tr>
+                      <td>Feminino</td>
+                      <td>R$ 20,00</td>
+                      <td>50</td>
+                      <td>R$ 1.000,00</td>
+                    </tr>
+                    <tr>
+                        <td>Camarote</td>
+                        <td>R$ 60,00</td>
+                        <td>30</td>
+                        <td>R$ 1.800,00</td>
+                    </tr>
+                    <tfoot>
+                        <tr style="background-color: rgb(41, 4, 56); color: rgb(255,255,255)">
+                            <td colspan="3" style="text-align:center;">Faturamento do evento</td>
+                            <td colspan="1">R$ 5.800,00</td>
+                        </tr>
+                    </tfoot>
+                  </table>
+            </div>
+        </div>
+    </div>
+    <div>
+
+        <div class="graphic">
+
+            <div>
+                <canvas id="Chart"></canvas>
+            </div>              
+
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/js/customChart.js"></script>
+    <script src="./assets/js/nav-bar.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity5">
+<nav th:fragment="menu">
+	<a class="logo" href="/"><img src="./assets/img/logo-horizontal.png" alt=""></a>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/index">Início</a></li>
+            <li><a href="/eventos">Eventos</a></li>
+            <li><a href="/restaurantes">Restaurantes</a></li>
+            <li><a href="/smartickets">Smarticket</a></li>
+            <li><a href="/menu-digital">Menu Digital</a></li>
+            <li><a href="/profile">Minha Área</a></li>
+        </ul>
+        <ul class="nav-list" sec:authorize="isAuthenticated()">
+        	<li style="font-weight: bold;">
+        	<p sec:authentication="name"></p>
+        	
+        	</li>
+        </ul>
+        <ul class="nav-list" sec:authorize="isAuthenticated()">
+        	<li style="font-weight: bold;"><a href="/LoginPage" th:href="@{/logout}">SAIR</a></li>
+        </ul>
+        <ul class="nav-list" sec:authorize="isAnonymous()">
+        	<li style="font-weight: bold;"><a href="/LoginPage" th:href="@{/LoginPage}">ENTRAR</a></li>
+        </ul>
+        
+</nav>
+<script src="assets/js/nav-bar.js" th:src="@{/assets/js/nav-bar.js}"></script>
+</html>

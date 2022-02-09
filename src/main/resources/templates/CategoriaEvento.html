@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html style="font-family: Poppins, sans-serif;" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>newLandingPage</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" th:href="@{/assets/fonts/fontawesome-all.min.css}">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" th:href="@{/assets/fonts/font-awesome.min.css}">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css" th:href="@{/assets/fonts/ionicons.min.css}">
+    <link rel="stylesheet" href="assets/fonts/material-icons.min.css" th:href="@{/assets/fonts/material-icons.min.css}">
+    <link rel="stylesheet" href="assets/css/content_blocks_modernstyle.css" th:href=@{/assets/css/content_blocks_modernstyle.css}>
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css" th:href="@{/assets/css/Footer-Dark.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css"  th:href="@{/assets/css/Simple-Slider.css}">
+    <link rel="stylesheet" href="./lib/Nivo-Slider-jQuery/themes/default/default.css" th:href="@{/lib/Nivo-Slider-jQuery/themes/default/default.css}">
+    <link rel="stylesheet" href="./assets/css/nav-bar.css" th:href="@{/assets/css/nav-bar.css}">
+    <link rel="stylesheet" href="./lib/Nivo-Slider-jQuery/nivo-slider.css" th:href="@{/lib/Nivo-Slider-jQuery/nivo-slider.css}">
+    <style>
+        ul li:hover {
+            color: rgba(255, 255, 255, 0.473);
+            text-decoration: none;
+        }
+        
+        ul {
+            margin-top: 1rem;
+        }
+        
+        ul li a:hover {
+            text-decoration: none;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body style="color: rgb(255,255,255);/*background: rgb(0,0,0);*//*border-color: rgb(0,0,0);*/font-family: Poppins, sans-serif;">
+
+	<nav th:insert="~{_template :: menu}"></nav>
+	
+    <!-- <nav>
+        <a class="logo" href="/"><img src="./assets/img/logo-horizontal.png" alt="" srcset=""></a>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="CategoriaEvento.html">Eventos</a></li>
+            <li><a href="CategoriaRestaurante.html">Restaurantes</a></li>
+            <li><a href="Smarticket.html">Smarticket</a></li>
+            <li><a href="MenuDigital.html">Menu Digital</a></li>
+            <li><a href="MinhaCarteira.html">Minha Área</a></li>
+            <li><a href="#">Favoritos</a></li>
+
+
+        </ul>
+        <img src="./assets/img/perfil.jpg" style="width:30px; border-radius: 20px;" alt="" srcset="">
+    </nav> -->
+
+
+    <div id="slider" class="nivoSlider theme-default" style="margin-bottom: -4rem;">
+        <img src="./assets/img/slide-1.jpg">
+        <img src="./assets/img/slide-2.jpg">
+        <img src="./assets/img/slide-1.jpg">
+    </div>
+
+    <div class="features-boxed">
+        <div class="container">
+            <div class="row justify-content-center features" style="margin-bottom: 0px;">
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box" style="background: url(&quot;assets/img/1%20-%20pagode.png&quot;) left / cover no-repeat, #ffffff;filter: blur(0px);margin-top: 1rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30px;margin-bottom: 3rem;margin-top: 3rem;">PAGODE</h3><a class="learn-more" href="lista-eventos.html" style="text-decoration: none;color: rgb(255,255,255);border-color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box" style="background: url(assets/img/2%20-%20lgbt.png) no-repeat;background-size: cover;margin-top: 1rem;width: 100%;">
+                        <h3 class="name" style="font-size: 29px;margin-top: 3rem;margin-bottom: 3rem;">LGBTQIA+</h3><a class="learn-more" href="lista-eventos.html" style="text-decoration: none;color: rgb(255,255,255);border-color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box" style="background: url(&quot;assets/img/3%20-%20pop.png&quot;) bottom / cover no-repeat;margin-top: 1rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30PX;margin-top: 3rem;margin-bottom: 3rem;">POP</h3><a class="learn-more" href="/listaEventos" style="text-decoration: none;border-color: rgb(255,255,255);color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item" style="margin-top: 1rem;">
+                    <div class="box" style="background: url(&quot;assets/img/4%20-%20rock.png&quot;);background-size: cover;margin-top: 1rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30px;margin-top: 3rem;margin-bottom: 3rem;">ROCK</h3><a class="learn-more" href="lista-eventos.html" style="text-decoration: none;color: rgb(255,255,255);border-color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item" style="margin-top: 1rem;">
+                    <div class="box" style="background: url(&quot;assets/img/5%20-%20rave.png&quot;);background-size: cover;margin-top: 1rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30px;margin-top: 3rem;margin-bottom: 3rem;">RAVE</h3><a class="learn-more" href="lista-eventos.html" style="text-decoration: none;border-color: rgb(255,255,255);color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item" style="margin-top: 1rem;">
+                    <div class="box" style="background: url(&quot;assets/img/6%20-%20Febre-Sertaneja-16.png&quot;);background-size: cover;margin-top: 1rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30px;margin-top: 3rem;margin-bottom: 3rem;">SERTANEJO</h3><a class="learn-more" href="lista-eventos.html" style="text-decoration: none;color: rgb(255,255,255);border-color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box" style="background: url(&quot;assets/img/7%20-%20show-diverso.png&quot;);background-size: cover;margin-top: 2rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30px;margin-top: 3rem;margin-bottom: 3rem;">DIVERSOS</h3><a class="learn-more" href="lista-eventos.html" style="text-decoration: none;color: rgb(255,255,255);border-color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer style="background: #2b223f;padding: 2px;">
+        <footer class="footer-dark" style="background: rgb(43,34,63);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Suporte&nbsp; à eventos</a></li>
+                            <li><a href="#">Promoter</a></li>
+                            <li><a href="#">Gestão de capital</a></li>
+                            <li><a href="#">People networking</a></li>
+                            <li><a href="#">Gestão de eventos</a></li>
+                            <li><a href="#">Reserva de mesa</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Quem somos ?</a></li>
+                            <li><a href="#">Nosso time</a></li>
+                            <li><a href="#">Carreira</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3><strong>Cheap Chap Company</strong><br></h3>
+                        <p>Somos uma empresa focada na experiência dos usuários em suas atividades diárias como ir a eventos, efetuar pagamentos, fazer reservas em restaurantes e se divertir com a família. Somos a empresa que cuida da sua diversão.&nbsp;
+                            :)
+                            <br></p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Cheap Chap © 2021</p>
+            </div>
+        </footer>
+    </footer>
+    <nav class="navbar navbar-light navbar-expand-md" style="background: #1a083a;height: 4rem;position: fixed;z-index: 99;">
+        <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1" style="z-index: 99;height: 4rem;">
+                <ul class="navbar-nav" style="background: #1a083a;">
+                    <li class="nav-item" style="margin-left: 3rem;"><a class="nav-link active d-md-flex d-lg-flex align-items-md-center align-items-lg-center" href="#" style="background: rgba(255,255,255,0);color: rgba(255,255,255,0.9);height: 4rem;">Início</a></li>
+                    <li class="nav-item"><a class="nav-link d-md-flex d-lg-flex align-items-md-center align-items-lg-center" href="#" style="background: rgba(255,255,255,0);color: rgb(255,255,255);height: 4rem;margin-left: 3rem;">Eventos</a></li>
+                    <li class="nav-item"><a class="nav-link d-md-flex d-lg-flex align-items-md-center align-items-lg-center" href="#" style="background: rgba(255,255,255,0);color: rgb(255,255,255);height: 4rem;margin-left: 3rem;">Restaurantes</a></li>
+                    <li class="nav-item"><a class="nav-link d-md-flex d-lg-flex align-items-md-center align-items-lg-center" href="#" style="background: rgba(255,255,255,0);color: rgb(255,255,255);height: 4rem;margin-left: 3rem;">Smarticket</a></li>
+                    <li class="nav-item"><a class="nav-link text-left d-md-flex d-lg-flex align-items-md-center align-items-lg-center" href="#" style="background: rgba(255,255,255,0);color: rgb(255,255,255);height: 4rem;margin-left: 3rem;">Menu-Digital</a></li>
+                </ul>
+            </div><img class="d-none d-sm-flex justify-content-sm-end" src="assets/img/logo-horizontal.png" style="width: 9rem;">
+        </div>
+    </nav>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="./lib/Nivo-Slider-jQuery/jquery.nivo.slider.js"></script>
+    <script src="./assets/js/nav-bar.js"></script>
+    <script>
+        $('#slider').nivoSlider();
+    </script>
+</body>
+
+</html>

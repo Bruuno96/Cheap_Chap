@@ -1,0 +1,150 @@
+@font-face {
+    font-family: poppinsBold;
+    src: url(../fonts/Poppins-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: poppinsRegular;
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppinsThin;
+    src: url(../fonts/Poppins-Thin.ttf);
+
+}
+body{    
+    background: rgb(255, 255, 255);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.divForm{
+    box-shadow: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.form-group{
+
+    display: flex;
+    flex-direction: flex;
+
+
+}
+ ul li:nth-child(odd){
+    color:rgb(30, 15, 95);
+ }
+
+ ul li{
+    margin-left: 3rem;
+ }
+
+ ul{
+     text-decoration: none;
+     list-style-type: none;
+ }
+
+.form{
+        padding: 3rem;
+        display: column;
+        justify-content: center;
+        
+}
+
+.rightDivForm{
+    display: flex; 
+    flex-direction: column; 
+    margin-left: 3rem;
+}
+
+.BuyBtton {
+    margin-top: 1rem;
+    width: 7rem;
+    height: 2rem;
+    background-color: rgb(61, 5, 133);
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-family: poppinsRegular;
+}
+
+.BuyBtton:hover {
+    background-color: rgba(61, 5, 133, 0.534);
+    border-color: rgb(61, 5, 133);
+    font-weight: bold;
+}
+
+#img{
+    width: 20px;
+}
+
+input{
+    padding: 0.4rem;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.144);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-color: rgba(36, 29, 29, 0.226);
+    font-family: formFamily;
+}
+
+input[type="file"]{
+    padding: 0.4rem;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.144);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-color: rgba(36, 29, 29, 0.226);
+    font-family: formFamily;
+}
+
+select{
+    padding: 0.4rem;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.144);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-color: rgba(36, 29, 29, 0.226);
+    font-family: formFamily;
+}
+
+option{
+    padding: 0.4rem;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.144);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-color: rgba(36, 29, 29, 0.226);
+    font-family: formFamily;
+}
+
+label{
+    margin-top: 1rem;
+    font-family: poppinsThin;
+    font-weight: 700;
+    color:rgb(0, 0, 0)
+
+}
+
+textarea{
+    padding: 0.4rem;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.144);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-color: rgba(36, 29, 29, 0.226);
+    font-family: formFamily;
+}

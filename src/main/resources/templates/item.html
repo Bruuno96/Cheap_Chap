@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>
+            <h1>Titulo</h1>
+            <div>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus unde veritatis atque nisi, nesciunt odio fugit nobis accusamus esse deleniti, dolore velit sequi quasi eligendi culpa quis quaerat laboriosam exercitationem.
+            </div>
+        </li>
+
+        <li>
+            <h1>Titulo</h1>
+            <div>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus unde veritatis atque nisi, nesciunt odio fugit nobis accusamus esse deleniti, dolore velit sequi quasi eligendi culpa quis quaerat laboriosam exercitationem.
+            </div>
+        </li>
+
+
+        <li>
+            <h1>Titulo</h1>
+            <div>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus unde veritatis atque nisi, nesciunt odio fugit nobis accusamus esse deleniti, dolore velit sequi quasi eligendi culpa quis quaerat laboriosam exercitationem.
+            </div>
+        </li>
+    </ul>
+
+    <script src="./assets/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('li h1').on('click', function(e) {
+
+                $('li div').slideUp();
+                // let hiddenItems = $('ul li div:hidden').length;
+
+                // let method = (hiddenItems > 0) ? 'slideDown' : 'slideUp';
+
+                // eval(`$('div').${method}()`);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/estilo-lista-eventos.css">
+    <link rel="stylesheet" href="assets/css/Filter.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/Profile-Card.css">
+    <link rel="stylesheet" href="./assets/css/nav-bar.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+	<nav th:insert="~{_template :: menu}"></nav>
+	
+
+    <div class="menu-space"> </div>
+
+    <div class="evento-destaque" style="background-image: url(./assets/img/banner-japonesa-1.png); ">
+
+    </div>
+
+
+    <div class="container" style="display:flex">
+
+        <div class="divEvento">
+            <ul>
+                <img src="./assets/img/japonese-restaurant-1.jpg" class="img-responsive">
+                <li>Sushi Yaki</li>
+                <li class="local">25 km</li>
+                <li>Av. Paulista 1233</li>
+                <div class="more-details">
+                    <a href="/more-Details-Restaurant">Mais detalhes</a>
+                </div>
+            </ul>
+        </div>
+
+        <div class="divEvento">
+            <ul>
+                <img src="./assets/img/japonese-restaurant-2.jpg" class="img-responsive">
+                <li>Kimura</li>
+                <li class="local">18 km</li>
+                <li>Av. Conselheiro Carrão, 1277</li>
+                <div class="more-details">
+                    <a href="more-Details-Restaurant.html">Mais detalhes</a>
+                </div>
+            </ul>
+        </div>
+
+        <div class="divEvento">
+            <ul>
+                <img src="./assets/img/japonese-restaurant-3.jpg" class="img-responsive">
+                <li>Brandname</li>
+                <li class="local">28 km</li>
+                <li>Av. Aricanduva 5555</li>
+                <div class="more-details">
+                    <a href="more-Details-Restaurant.html">Mais detalhes</a>
+                </div>
+            </ul>
+        </div>
+
+        <div class="divEvento">
+            <ul>
+                <img src="./assets/img/japonese-restaurant-4.png" class="img-responsive">
+                <li>Miyuki</li>
+                <li class="local">21 km</li>
+                <li>Rua Hernesto cabral, 45</li>
+                <div class="more-details">
+                    <a href="more-Details-Restaurant.html">Mais detalhes</a>
+                </div>
+            </ul>
+        </div>
+
+        <div class="divEvento">
+            <ul>
+                <img src="./assets/img/japonese-restaurant-5.png" class="img-responsive">
+                <li>Sushi in casa</li>
+                <li class="local">10 km</li>
+                <li>Rua madureira 1090</li>
+                <div class="more-details">
+                    <a href="more-Details-Restaurant.html">Mais detalhes</a>
+                </div>
+            </ul>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/button-materialize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="./assets/js/nav-bar.js"></script>
+</body>
+
+</html>

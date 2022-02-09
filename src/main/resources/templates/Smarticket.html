@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Smarticket</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" th:href="@{/assets/fonts/fontawesome-all.min.css}">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" th:href="@{/assets/fonts/font-awesome.min.css}">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css" th:href="@{/assets/fonts/ionicons.min.css}">
+    <link rel="stylesheet" href="assets/fonts/material-icons.min.css" th:href="@{/assets/fonts/material-icons.min.css}">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css" th:href="@{/assets/fonts/simple-line-icons.min.css}">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css" th:href="@{/assets/fonts/fontawesome5-overrides.min.css}">
+    <link rel="stylesheet" href="assets/css/dh-row-text-image-right-responsive.css" th:href="@{/assets/css/dh-row-text-image-right-responsive.css}">
+    <link rel="stylesheet" href="assets/css/Features-Clean.css" th:href="@{/assets/css/Features-Clean.css}">
+    <link rel="stylesheet" href="assets/css/Filter.css" th:href="@{/assets/css/Filter.css}">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css" th:href="@{/assets/css/Footer-Dark.css}">
+    <link rel="stylesheet" href="./assets/css/nav-bar.css" th:href="@{/assets/css/nav-bar.css}">
+    <style>
+        ul li a:hover{
+          text-decoration:none;
+          color: white;
+          
+        }
+  
+        ul{
+          margin-top: 1rem;
+        }
+      </style>
+</head>
+
+<body style="color: rgb(34,14,66);">
+    <nav th:insert="~{_template :: menu}"></nav>
+    <div class="text-center" style="height: 50vh;background: #29113e;color: rgb(208,208,208);">
+        <div class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex flex-column justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center" style="height: 100%;background: url(&quot;assets/img/3529957.jpg&quot;) bottom / cover no-repeat;">
+            <p style="font-size: 46px;font-family: Poppins, sans-serif;font-weight: bold;">SMARTICKET</p>
+            <p style="font-weight: 200;">Segurança, Praticidade e Flexibilidade</p>
+        </div>
+    </div>
+    <div class="text-center">
+        <section class="d-xl-flex justify-content-xl-center align-items-xl-center features-clean">
+            <div class="container">
+                <div class="intro">
+                    <h2 class="text-center">O grande diferencial...</h2>
+                    <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+                </div>
+                <div class="row features">
+                    <div class="col-sm-6 col-lg-4 item"><i class="fa fa-map-marker icon"></i>
+                        <h3 class="name">Works everywhere</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 item"><i class="fa fa-clock-o icon"></i>
+                        <h3 class="name">Always available</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 item"><i class="fa fa-list-alt icon"></i>
+                        <h3 class="name">Customizable</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 item"><i class="fa fa-leaf icon"></i>
+                        <h3 class="name">Organic</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 item"><i class="fa fa-plane icon"></i>
+                        <h3 class="name">Fast</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 item"><i class="fa fa-phone icon"></i>
+                        <h3 class="name">Mobile-first</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer style="background: #2b223f;">
+        <footer class="footer-dark" style="background: rgb(43,34,63);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Suporte&nbsp; à eventos</a></li>
+                            <li><a href="#">Promoter</a></li>
+                            <li><a href="#">Gestão de capital</a></li>
+                            <li><a href="#">People networking</a></li>
+                            <li><a href="#">Gestão de eventos</a></li>
+                            <li><a href="#">Reserva de mesa</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Quem somos ?</a></li>
+                            <li><a href="#">Nosso time</a></li>
+                            <li><a href="#">Carreira</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3><strong>Cheap Chap Company</strong><br></h3>
+                        <p>Somos uma empresa focada na experiência dos usuários em suas atividades diárias como ir a eventos, efetuar pagamentos, fazer reservas em restaurantes e se divertir com a família. Somos a empresa que cuida da sua diversão.&nbsp; :)<br></p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Cheap Chap © 2021</p>
+            </div>
+        </footer>
+    </footer>
+    <script src="assets/js/jquery.min.js" th:src="@{/assets/js/jquery.min.js}"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js" th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="./assets/js/nav-bar.js" th:src="@{/assets/js/nav-bar.js}"></script>
+</body>
+
+</html>

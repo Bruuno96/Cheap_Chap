@@ -1,0 +1,64 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/Poppins-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: formFamily;
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+
+body{
+    font-family:formFamily;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex:1;
+    align-items: center;
+
+}
+.graphic{
+
+    padding-top: 3rem;
+    flex:0.6;
+
+}
+
+.table{
+    padding: 3rem;
+}
+
+.right-div{
+    margin-top: 8rem;
+    flex:0.4;
+    height: 200px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #dddddd;
+  }
+
+  @media (max-width: 1400px) {
+
+    .container{
+        display: block;
+        justify-content: center;
+        flex:1;
+    
+    }
+      
+  }

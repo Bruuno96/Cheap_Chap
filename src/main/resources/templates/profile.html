@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu perfil</title>
+
+    <link rel="stylesheet" href="./assets/css/nav-bar.css">
+    <link rel="stylesheet" href="./assets/css/profile.css">
+    
+
+
+
+</head>
+
+<body>
+	
+	<!-- TOP MENU -->
+	<nav th:insert="~{_template :: menu}"></nav>
+
+
+    <div class="container-div">
+
+    </div>
+
+    <div class="container">
+
+        <div class="left-div">
+
+		<!-- LEFT MENU -->
+		<div th:include="_template-sub :: sub-menu"></div>
+
+        </div>
+
+        <div class="right-div">
+            
+            <div class="div-saldo">
+
+                
+                <div style="padding: 1rem;">Saldo em carteira</div>
+                <input name="vd_ga" id="vd_ga" class="real input_geral" type="text" disabled value="456679" style="display:flex;color:aliceblue;text-align:center;font-size:40px;background-color:rgba(255, 255, 255, 0);" />
+
+            </div>
+
+            <div class="dados-conta">
+
+                <form action="" class="form">
+
+                <div class="div1">
+
+                    <h3>Dados de Acesso</h3>
+                            
+                            <label for="">Email:</label>
+                            <input type="text" value="brunotkd96@gmail.com">
+
+
+                            <label for="">Senha:</label>
+                            <input type="password" value="123456789">
+
+                            <label for="">Confirmar senha:</label>
+                            <input type="password" value="123456789">
+
+
+
+                </div>
+
+
+                <div class="div2">
+
+                    <h3>Dados Pessoais</h3>
+                            
+                            <label for="">Nacionalidade:</label>
+                            <select name="" id="">
+                                <option value="Selecione" selected>Selecione o pais</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Estados Unidos">USA</option>
+                                <option value="Mexico">México</option>
+                                <option value="Peru">Peru</option>
+                                <option value="Alemanha">Alemanha</option>
+                            </select>
+
+                            <label for="">Celular:</label>
+                            <input type="text" id="" value="(11)94512-0553">
+
+                            <label for="">Nome:</label>
+                            <input type="text" value="Bruno">
+
+                            <label for="">Sobrenome:</label>
+                            <input type="text" value="Martin">
+
+                            <label for="">CPF:</label>
+                            <input type="text" value="482.859.678-08">
+
+                            <label for="">RG:</label>
+                            <input type="text" value="52.501.727-6">
+
+                            <label for="">Data de nascimento:</label>
+                            <input type="text" value="13/09/1996">
+
+                            <label for="">Genero:</label>
+                            <select name="" id="">
+                                <option value="Masculino">Masculino</option>
+                                <option value="Masculino">Feminino</option>
+                                <option value="Masculino">Selecione</option>
+                            </select>
+
+
+
+                </div>
+
+                
+
+                <div class="div3">
+
+                    <h3>Endereço</h3>
+                            
+                            
+
+                            <label for="">Rua:</label>
+                            <input type="text" value="Elisio ferreira">
+
+                            <label for="">CEP:</label>
+                            <input type="text" value="03964-010">
+
+                            <label for="">Número:</label>
+                            <input type="text" value="358">
+
+                            <label for="">Bairro:</label>
+                            <input type="text" value="São Mateus">
+
+                            <label for="">Estado:</label>
+                            <input type="text" value="São Paulo">
+
+
+                </div>
+
+                <div>
+                <button type="submit" class="BuyBtton">Salvar</button>
+                </div>
+
+
+                </form>
+
+                
+                
+            </div>
+
+
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.js"></script>
+    <script>
+         $(document).ready(function(){
+                $(".real").mask('#.##0,00', {
+                    reverse: true
+                    });
+
+                    function calculateValue() {
+                        $('#vd_ga').val().replace(',', '.');
+                    }
+
+                    function convertToCurrency(value) {
+                    return value.toLocaleString("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
+                        minimumFractionDigits: 2
+                    })
+                    }
+            });
+    </script>
+
+    <script src="./assets/js/nav-bar.js"></script>
+</body>
+
+</html>

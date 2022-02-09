@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu perfil</title>
+    <link rel="stylesheet" href="./assets/css/nav-bar.css">
+    <link rel="stylesheet" href="./assets/css/profile.css">
+    <link rel="stylesheet" href="./assets/css/transferir.css">
+    <link rel="stylesheet" href="./assets/css/MinhaCarteira.css">
+
+</head>
+
+<body>
+
+	<!-- TOP MENU -->
+  	<nav th:insert="~{_template :: menu}"></nav>
+
+    <div class="container-div">
+
+    </div>
+
+    <div class="container">
+
+        <div class="left-div">
+	
+			<!-- LEFT MENU -->
+            <div th:include="_template-sub :: sub-menu"></div>
+            
+        </div>
+
+        <div class="right-div">
+
+            <div class="div-saldo">
+
+
+                <div style="padding: 1rem;">Saldo em carteira</div>
+                <input name="vd_ga" id="vd_ga" class="real input_geral" type="text"disabled value="456679" style="display:flex;color:aliceblue;text-align:center;font-size:40px;background-color:rgba(255, 255, 255, 0);" />
+
+            </div>
+
+            <div class="dados-conta">
+
+                <form action="" class="form">
+
+                    <div class="form-group">
+
+                        <div class="aviso">
+
+                            <h3>AVISO IMPORTANTE:</h3>
+                            <p>A lista de pessoas que você poderá transferir o saldo em conta será apenas as pessoas que tiverem conta no aplicativo, NÃO realizamos transferência da sua conta para contas de banco com outro titular</p>
+    
+                        </div>
+
+                        <label for="">Forma de pagamento:</label>
+                        <select name="" id="">
+                            <option value="">Saldo em conta</option>
+                        </select>
+
+                        <label for="">Quanto você deseja transferir ?</label>
+                        <input name="vd_ga" id="vd_ga" class="real input_geral" type="text" />
+
+                    
+                    
+                            
+                        <label for="">Selecione para quem deseja transferir</label>
+                        <input type="text" placeholder="Amigos do facebook"/>
+
+                        <button type="submit" class="BuyBtton">Transferir</button>
+
+                    </div>
+                    </div>
+
+                    
+                
+                
+
+
+                </form>
+
+                
+                
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.js"></script>
+<script>
+            $(document).ready(function(){
+                $(".real").mask('#.##0,00', {
+                    reverse: true
+                    });
+
+                    function calculateValue() {
+                        $('#vd_ga').val().replace(',', '.');
+                    }
+
+                    function convertToCurrency(value) {
+                    return value.toLocaleString("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
+                        minimumFractionDigits: 2
+                    })
+                    }
+            });
+                </script>
+    <script src="./assets/js/nav-bar.js"></script>
+</body>
+</html>

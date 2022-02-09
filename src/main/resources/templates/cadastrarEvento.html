@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/nav-bar-dash.css" th:href="@{/assets/css/nav-bar-dash.css}">
+    <link rel="stylesheet" href="./assets/css/dashboard.css" th:href="@{/assets/css/dashboard.css}">
+    <link rel="stylesheet" href="./assets/css/cadastrarEvento.css" class="x" th:href="@{/assets/css/cadastrarEvento.css}">
+    
+
+    
+    <title>Dashboard</title>
+</head>
+<body>
+    
+	<nav th:include="_template-dashboard :: menu-dashboard"></nav>
+
+    <div class="container">
+
+        <div class="divForm">
+
+            <form action="" class="form">
+                
+                <div class="form-group">
+
+                    <div style="display:flex;flex-direction:column;">
+
+                    <h2>Cadastrar Evento</h2>
+
+                    <label for="">Nome do evento</label>
+                    <input type="text" name="name" id="" required>
+
+                    <label for="">Data início:</label>
+                    <input type="date" name="dataInicio" id="" required>
+
+                    <label for="">Data término:</label>
+                    <input type="date" name="dataTermino" id="" required>
+
+                    <label for="">Descrição:</label>
+                    <textarea name="descricao" id="" cols="30" rows="10" required></textarea>
+
+                    </div>
+
+                    <div class="rightDivForm">
+                        <label for="">Banner:</label>
+                        <input type="file" name="nome" id="" required>
+
+                        <label for="">Categoria:</label>
+                        <select name="" id="">
+                            <option value="pop">POP</option>
+                            <option value="pop">PAGODE</option>
+                            <option value="pop">LGBTQIA+</option>
+                            <option value="pop">ROCK</option>
+                            <option value="pop">RAVE</option>
+                            <option value="pop">SERTANEJO</option>
+                            <option value="pop">DIVERSOS</option>
+                        </select>
+                    </div>
+                    
+
+                </div>
+
+                <div>
+                    <button type="submit" class="BuyBtton">Cadastrar</button>
+               </div>
+               
+
+            </form>
+            
+        </div>
+
+        <div style="margin-left: 5rem;">
+            <img src="./assets/img/just-image (1).png" class="graphic" alt="" srcset="" style="width:500px;">
+            <ul>
+                <li>- Após criar um evento, crie seus tipos de ingressos</li>
+                <li>- Coloque os preços em cada tipo e seu estoque</li>
+                <li>- Acompanhe suas vendas no dashboard</li>
+                <li>- Faça sua retirada</li>
+            </ul>
+        </div>
+
+		<!--<i>mudar</i> -->
+       
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/js/nav-bar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.js"></script>
+    <script src="./assets/js/customMask.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('i').on('click',function(e) {
+
+                var x = $('head x');
+
+                $('head x').remove();
+                $('head').append('<link rel="stylesheet" href="./assets/css/cadastrar-evento-darkmode.css">');
+                $('.graphic').attr('src','./assets/img/esseaqui.png')
+            })
+            
+        })
+    </script>
+</body>
+</html>

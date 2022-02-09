@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Restaurantes</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="assets/css/Bootstrap-4---Product-List.css" th:href="@{/assets/css/Bootstrap-4---Product-List.css}">
+    <link rel="stylesheet" href="assets/css/content_blocks_modernstyle.css" th:href="@{/assets/css/content_blocks_modernstyle.css}">
+    <link rel="stylesheet" href="assets/css/dh-card-image-left-dark.css" th:href="@{/assets/css/dh-card-image-left-dark.css}">
+    <link rel="stylesheet" href="assets/css/divider-text-middle.css" th:href="@{/assets/css/divider-text-middle.css}">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css" th:href="@{/assets/css/Footer-Dark.css}">
+    <link rel="stylesheet" href="assets/css/Pretty-Product-List.css" th:href="@{/assets/css/Pretty-Product-List.css}">
+    <link rel="stylesheet" href="assets/fonts/material-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/nav-bar.css" th:href="@{/assets/css/nav-bar.css}">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css" th:href="@{/assets/fonts/ionicons.min.css}">
+    
+    <style>
+        ul li a:hover {
+            text-decoration: none;
+            color: white;
+        }
+        
+        ul {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+	<nav th:insert="~{_template :: menu}"></nav>
+
+    <div class="features-boxed">
+        <div class="container" style="padding-top: 10rem;">
+            <div class="row justify-content-center features">
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box" style="background: url(assets/img/1%20-%20Mercado.png) left / cover no-repeat, #ffffff;filter: blur(0px);margin-top: 1rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30px;margin-bottom: 3rem;margin-top: 3rem;">MERCADO</h3><a class="learn-more" href="#" style="text-decoration: none;color: rgb(255,255,255);border-color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box" style="background: url(assets/img/2%20-%20Japonesa.png) no-repeat;background-size: cover;margin-top: 1rem;width: 100%;">
+                        <h3 class="name" style="font-size: 29px;margin-top: 3rem;margin-bottom: 3rem;">JAPONESA</h3><a class="learn-more" href="/lista-restaurantes" style="text-decoration: none;color: rgb(255,255,255);border-color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box" style="background: url(assets/img/3%20-%20Chinesa.png) bottom / cover no-repeat;margin-top: 1rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30PX;margin-top: 3rem;margin-bottom: 3rem;">CHINESA</h3><a class="learn-more" href="#" style="text-decoration: none;border-color: rgb(255,255,255);color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item" style="margin-top: 1rem;">
+                    <div class="box" style="background: url(assets/img/4%20-%20Lanches.png);background-size: cover;margin-top: 1rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30px;margin-top: 3rem;margin-bottom: 3rem;">LANCHES</h3><a class="learn-more" href="#" style="text-decoration: none;color: rgb(255,255,255);border-color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item" style="margin-top: 1rem;">
+                    <div class="box" style="background: url(assets/img/5%20-%20Pizza.png);background-size: cover;margin-top: 1rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30px;margin-top: 3rem;margin-bottom: 3rem;">PIZZA</h3><a class="learn-more" href="#" style="text-decoration: none;border-color: rgb(255,255,255);color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item" style="margin-top: 1rem;">
+                    <div class="box" style="background: url(assets/img/6%20-%20Açaí.png);background-size: cover;margin-top: 1rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30px;margin-top: 3rem;margin-bottom: 3rem;">AÇAÍ</h3><a class="learn-more" href="#" style="text-decoration: none;color: rgb(255,255,255);border-color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box" style="background: url(assets/img/7%20-%20Salgados.png);background-size: cover;margin-top: 2rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30px;margin-top: 3rem;margin-bottom: 3rem;">SALGADOS</h3><a class="learn-more" href="#" style="text-decoration: none;color: rgb(255,255,255);border-color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box" style="background: url(assets/img/8%20-%20Árabe.png);background-size: cover;margin-top: 2rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30px;margin-top: 3rem;margin-bottom: 3rem;">ÁRABE</h3><a class="learn-more" href="#" style="text-decoration: none;color: rgb(255,255,255);border-color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box" style="background: url(assets/img/9%20-%20Pastel.png);background-size: cover;margin-top: 2rem;width: 100%;">
+                        <h3 class="name" style="font-size: 30px;margin-top: 3rem;margin-bottom: 3rem;">PASTEL</h3><a class="learn-more" href="#" style="text-decoration: none;color: rgb(255,255,255);border-color: rgb(255,255,255);">Veja mais »</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <!--Responsive Image Grid Block-->
+        <!--Photo Grid-->
+        <div>
+            <!--Comment-->
+        </div>
+    </div>
+    <div style="text-align:center;">
+        <h2 class="divider-style" style="font-family: Poppins, sans-serif;font-weight: 300;margin-top: 3rem;"><span>TOP 5 DO MÊS</span></h2>
+    </div>
+    <div class="container py-5">
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+
+                <!-- List group-->
+                <ul class="list-group shadow">
+
+                    <!-- list group item-->
+                    <li class="list-group-item">
+                        <!-- Custom content-->
+                        <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                            <div class="media-body order-2 order-lg-1">
+                                <h5 class="mt-0 font-weight-bold mb-2">Outback</h5>
+                                <p class="font-italic text-muted mb-0 small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit fuga autem maiores necessitatibus.</p>
+                                <div class="d-flex align-items-center justify-content-between mt-1">
+                                    <h6 class="font-weight-bold my-2">$120.00</h6>
+                                    <ul class="list-inline small">
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                                    </ul>
+                                </div>
+                            </div><img src="https://res.cloudinary.com/mhmd/image/upload/v1556485076/shoes-1_gthops.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                        </div>
+                        <!-- End -->
+                    </li>
+                    <!-- End -->
+
+                    <!-- list group item-->
+                    <li class="list-group-item">
+                        <!-- Custom content-->
+                        <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                            <div class="media-body order-2 order-lg-1">
+                                <h5 class="mt-0 font-weight-bold mb-2">Restaurante da vó</h5>
+                                <p class="font-italic text-muted mb-0 small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit fuga autem maiores necessitatibus.</p>
+                                <div class="d-flex align-items-center justify-content-between mt-1">
+                                    <h6 class="font-weight-bold my-2">$99.00</h6>
+                                    <ul class="list-inline small">
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    </ul>
+                                </div>
+                            </div><img src="https://res.cloudinary.com/mhmd/image/upload/v1556485077/shoes-3_rk25rt.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                        </div>
+                        <!-- End -->
+                    </li>
+                    <!-- End -->
+
+                    <!-- list group item -->
+                    <li class="list-group-item">
+                        <!-- Custom content-->
+                        <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                            <div class="media-body order-2 order-lg-1">
+                                <h5 class="mt-0 font-weight-bold mb-2">Paris 5</h5>
+                                <p class="font-italic text-muted mb-0 small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit fuga autem maiores necessitatibus.</p>
+                                <div class="d-flex align-items-center justify-content-between mt-1">
+                                    <h6 class="font-weight-bold my-2">$140.00</h6>
+                                    <ul class="list-inline small">
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                                    </ul>
+                                </div>
+                            </div><img src="https://res.cloudinary.com/mhmd/image/upload/v1556485078/shoes-2_g4qame.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                        </div>
+                        <!-- End -->
+                    </li>
+                    <!-- End -->
+
+                    <!-- list group item -->
+                    <li class="list-group-item">
+                        <!-- Custom content-->
+                        <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                            <div class="media-body order-2 order-lg-1">
+                                <h5 class="mt-0 font-weight-bold mb-2">Madero</h5>
+                                <p class="font-italic text-muted mb-0 small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit fuga autem maiores necessitatibus.</p>
+                                <div class="d-flex align-items-center justify-content-between mt-1">
+                                    <h6 class="font-weight-bold my-2">$220.00</h6>
+                                    <ul class="list-inline small">
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    </ul>
+                                </div>
+                            </div><img src="https://res.cloudinary.com/mhmd/image/upload/v1556485078/shoes-4_vgfjy9.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                        </div>
+                        <!-- End -->
+                    </li>
+                    <!-- End -->
+
+                    <!-- list group item -->
+                    <li class="list-group-item">
+                        <!-- Custom content-->
+                        <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                            <div class="media-body order-2 order-lg-1">
+                                <h5 class="mt-0 font-weight-bold mb-2">Olive Garden</h5>
+                                <p class="font-italic text-muted mb-0 small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit fuga autem maiores necessitatibus.</p>
+                                <div class="d-flex align-items-center justify-content-between mt-1">
+                                    <h6 class="font-weight-bold my-2">$140.00</h6>
+                                    <ul class="list-inline small">
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                                    </ul>
+                                </div>
+                            </div><img src="https://res.cloudinary.com/mhmd/image/upload/v1556485078/shoes-2_g4qame.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                        </div>
+                        <!-- End -->
+                    </li>
+                    <!-- End -->
+
+
+                </ul>
+                <!-- End -->
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: #2b223f;padding: 2px;">
+        <footer class="footer-dark" style="background: rgb(43,34,63);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Suporte&nbsp; à eventos</a></li>
+                            <li><a href="#">Promoter</a></li>
+                            <li><a href="#">Gestão de capital</a></li>
+                            <li><a href="#">People networking</a></li>
+                            <li><a href="#">Gestão de eventos</a></li>
+                            <li><a href="#">Reserva de mesa</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Quem somos ?</a></li>
+                            <li><a href="#">Nosso time</a></li>
+                            <li><a href="#">Carreira</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3><strong>Cheap Chap Company</strong><br></h3>
+                        <p>Somos uma empresa focada na experiência dos usuários em suas atividades diárias como ir a eventos, efetuar pagamentos, fazer reservas em restaurantes e se divertir com a família. Somos a empresa que cuida da sua diversão.&nbsp;
+                            :)
+                            <br></p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Cheap Chap © 2021</p>
+            </div>
+        </footer>
+    </footer>
+    <nav class="navbar navbar-light navbar-expand-md" style="background: #1a083a;height: 4rem;position: fixed;z-index: 99;">
+        <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1" style="z-index: 99;height: 4rem;">
+                <ul class="navbar-nav" style="background: #1a083a;">
+                    <li class="nav-item" style="margin-left: 3rem;"><a class="nav-link active d-md-flex d-lg-flex align-items-md-center align-items-lg-center" href="#" style="background: rgba(255,255,255,0);color: rgba(255,255,255,0.9);height: 4rem;">Início</a></li>
+                    <li class="nav-item"><a class="nav-link d-md-flex d-lg-flex align-items-md-center align-items-lg-center" href="#" style="background: rgba(255,255,255,0);color: rgb(255,255,255);height: 4rem;margin-left: 3rem;">Eventos</a></li>
+                    <li class="nav-item"><a class="nav-link d-md-flex d-lg-flex align-items-md-center align-items-lg-center" href="#" style="background: rgba(255,255,255,0);color: rgb(255,255,255);height: 4rem;margin-left: 3rem;">Restaurantes</a></li>
+                    <li class="nav-item"><a class="nav-link d-md-flex d-lg-flex align-items-md-center align-items-lg-center" href="#" style="background: rgba(255,255,255,0);color: rgb(255,255,255);height: 4rem;margin-left: 3rem;">Smarticket</a></li>
+                    <li class="nav-item"><a class="nav-link text-left d-md-flex d-lg-flex align-items-md-center align-items-lg-center" href="#" style="background: rgba(255,255,255,0);color: rgb(255,255,255);height: 4rem;margin-left: 3rem;">Menu-Digital</a></li>
+                </ul>
+            </div><img class="d-none d-sm-flex justify-content-sm-end" src="assets/img/logo-horizontal.png" style="width: 9rem;">
+        </div>
+    </nav>
+    <script src="assets/js/jquery.min.js" th:src="@{/assets/js/jquery.min.js}"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js" th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+    <script src="assets/js/Animated-Pretty-Product-List-v12.js" th:src="@{/assets/js/Animated-Pretty-Product-List-v12.js}"></script>
+    <script src="assets/js/button-materialize.js" th:src="@{/assets/js/button-materialize.js}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" ></script>
+    <script src="assets/js/new-age.js" th:src="@{/assets/js/new-age.js}"></script>
+    <script src="assets/js/nav-bar.js" th:src="@{/assets/js/nav-bar.js}"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htttp://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/estilo-more-Details.css" th:href="@{/assets/css/estilo-more-Details.css}">
+    <link rel="stylesheet" href="./assets/css/nav-bar.css" th:href="@{/assets/css/nav-bar.css}">
+    <link rel="stylesheet" href="./assets/css/estilo-lista-eventos.css" th:href="@{/assets/css/estilo-lista-eventos.css}">
+
+
+    <title>Document</title>
+</head>
+
+<body onload="recarregarPagina()">
+
+	<nav th:include="_template :: menu"></nav>
+
+    <!-- <nav>
+        <a class="logo" href="/"><img src="./assets/img/logo-horizontal.png" alt="" srcset=""></a>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="CategoriaEvento.html">Eventos</a></li>
+            <li><a href="CategoriaRestaurante.html">Restaurantes</a></li>
+            <li><a href="Smarticket.html">Smarticket</a></li>
+            <li><a href="MenuDigital.html">Menu Digital</a></li>
+            <li><a href="MinhaCarteira.html">Minha Área</a></li>
+            <li><a href="#">Favoritos</a></li>
+
+
+        </ul>
+        <img src="./assets/img/perfil.jpg" style="width:30px; border-radius: 20px;" alt="" srcset="">
+    </nav> -->
+
+    <div class="space-menu">
+
+    </div>
+
+    <div class="container">
+        <div class="left-div-ghost">
+            <div class="left-div">
+
+                <div class="Aboutticket">
+
+                    <div class="divEvento">
+                        <ul>
+                            <img src="./assets/img/3 - pop.jpg" class="img-responsive">
+                            <div style="margin-top: 1rem;">
+                                <li>Grupo Revelação</li>
+                                <li class="local"> Sexta, 05 de Novembro</li>
+                                <li>Villa country</li>
+                            </div>
+
+                            <div class="more-details" style="display:flex;align-items:center;">
+                                <p style="margin-right: 0.5rem;">
+                                    <a>Adicionar aos favoritos</a></p>
+                                <img src="./assets/img/favorite.png" alt="" style="max-width:20px;">
+                            </div>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <div class="container-1">
+
+                    <div class="text">
+                        <h2>Organizador: </h2>
+                        <p>Espaço Win e Buffet LTDA - EPP (CNPJ: 20.648.900/0001-57) </p>
+
+                        <h2>Classificação: </h2>
+                        <p>16 Anos - Menores de 16 anos somente acompanhado dos pais ou responsável legal.</p>
+
+                        <h2>Data e Hora:</h2>
+                        <p> Sexta, 05 de Novembro de 2021 - Abertura: 20:30</p>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="right-div">
+
+            <div class="div-collapse">
+
+                <h1 style="padding-top:2rem">INFORMAÇÕES:</h1>
+                <ul>
+                    <li class="collapse-header">
+                        <button type="button" class="collapsible">
+                        <img src="./assets/img/plus.png" alt="" srcset="" style="width: 10px" id="img">
+                             Pontos de venda
+                        </button>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </li>
+
+                    <li class="collapse-header">
+                        <button type="button" class="collapsible"><img src="./assets/img/plus.png" alt="" srcset="" style="width: 10px" id="img"> Localização</button>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </li>
+
+                    <li class="collapse-header">
+                        <button type="button" class="collapsible"><img src="./assets/img/plus.png" alt="" srcset="" style="width: 10px" id="img"> Informações</button>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </li>
+
+                    <li class="collapse-header">
+                        <button type="button" class="collapsible"><img src="./assets/img/plus.png" alt="" srcset="" style="width: 10px" id="img"> Como repassar meu ingresso ?</button>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </li>
+
+                    <li class="collapse-header">
+                        <button type="button" class="collapsible">
+                        
+                        <img src="./assets/img/plus.png" style="width: 10px" id="icone"> Galeria de fotos
+                    </button>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="form-group">
+                <h1>DETALHES DO PAGAMENTO</h1>
+                <form action="" method="post" class="form">
+
+
+                    <label>Escolha o método de pagamento: </label>
+
+
+                    <input type="radio" id="html" name="fav_language" value="HTML">
+                    <label for="html">PIX</label>
+                    <input type="radio" id="css" name="fav_language" value="CSS">
+                    <label for="css">Carteira Digital</label><br>
+
+
+                    <hr>
+
+                    <div class="NumberOfTickets">
+                        <label>Escolha a quantidade de Masculino:</label>
+                        <p class="valor-masc" value="60" id="valor-masc">R$ 60,00 + taxa</p>
+                        <select name="Quantidade" id="masc-tickets" class="masc-tickets">
+                            <option value="0" selected >0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                          </select>
+                    </div>
+
+                    <div class="NumberOfTickets">
+                        <label>Escolha a quantidade de Feminino:</label>
+                        <p class="valor-fem" value="40" id="valor-fem">R$ 40,00 + taxa</p>
+                        <select name="Quantidade" id="fem-tickets" class="fem-tickets">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                          </select>
+                    </div>
+
+                    <div class="NumberOfTickets">
+                        <label>Escolha a quantidade de Meia entrada:</label>
+                        <p class="valor-meia" value="30.00" id="valor-meia">R$ 30,00 + taxa</p>
+                        <select name="Quantidade" id="meia-tickets" class="meia-tickets">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                          </select>
+                    </div>
+
+                    <!--<input type="button" value="calcular" id="updateContent" onClick="window.location.reload()" class="BuyBtton">-->
+
+                    <hr>
+
+                    <div class="emailFriends">
+                        <label for="">Informe o email:</label>
+                        <div class="element"></div>
+                        <input type="email" name="x" id="" placeholder="Infome o nome ou email de seu amigo do Facebook">
+
+                    </div>
+
+
+
+                    <hr>
+
+                    <div class="total-price">
+
+                        <div>
+                            <h2>Total:</h2>
+                        </div>
+
+                        <div class="price">
+                            <h2 id="price"></h2>
+                        </div>
+
+                        <div id="content">
+
+                        </div>
+
+
+                    </div>
+                    <button type="submit" class="BuyBtton" style="margin-bottom: 60px;">Comprar</button>
+                </form>
+            </div>
+        </div>
+        <script src="assets/js/jquery.min.js" th:src="@{/assets/js/jquery.min.js}"></script>
+        <script src="assets/js/nav-bar.js" th:src="@{/assets/js/nav-bar.js}"></script>
+        <script src="assets/js/collapse.js" th:src="@{/assets/js/collapse.js}"></script>
+        <script>
+
+            function recarregarPagina() {
+                localStorage.clear();
+            }
+
+            $(document).ready(function() {
+
+
+                
+                $('.NumberOfTickets select').change(function(event){
+            
+                let meia;
+                let masc;
+                let fem;
+                var cidade = Number(event.currentTarget.value);
+                if($(this).hasClass('masc-tickets')){
+                    masc = cidade * 60;
+                    localStorage.setItem('masc', masc);
+                    console.log(cidade*60);
+                }else if ($(this).hasClass('fem-tickets')){
+                    fem = cidade * 40
+                    localStorage.setItem('fem', fem);
+                }else if ($(this).hasClass('meia-tickets')){
+                    meia = cidade * 30
+                    localStorage.setItem('meia', meia);
+                }
+                let total = Number(localStorage.getItem('meia')) + Number(localStorage.getItem('masc')) + Number(localStorage.getItem('fem'))
+                console.log("Valor total: "+total);
+                $('#price').text(`R$ ${total.toFixed(2)}`);
+                });
+            })
+        </script>
+
+
+</body>
+
+</html>

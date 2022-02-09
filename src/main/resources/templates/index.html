@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" th:href="@{/assets/fonts/fontawesome-all.min.css}">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" th:href="@{/assets/fonts/font-awesome.min.css}">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css" th:href="@{assets/fonts/ionicons.min.css}">
+    <link rel="stylesheet" href="assets/fonts/material-icons.min.css" th:href="@{assets/fonts/material-icons.min.css}">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css" th:href="@{assets/fonts/simple-line-icons.min.css}">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css" th:href="@{assets/css/Footer-Dark.css}">
+    <link rel="stylesheet" href="./assets/css/nav-bar.css"th:href="@{assets/css/nav-bar.css}">
+    <style>
+        ul li :hover{
+            color: rgba(255, 255, 255, 0.473);
+            list-style: none;
+            text-decoration: none;
+            
+        }
+
+        ul{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body id="page-top" style="font-family: Poppins, sans-serif;">
+ 
+ 
+ 	<!-- MENU PAGE  -->
+  	<nav th:include="_template :: menu"></nav>
+ 
+    <header class="masthead" style="background: url(&quot;assets/img/Prince-Color-Purple_dark.png&quot;) center / cover no-repeat, linear-gradient(to left, #7964bf, #2b223f 100%);">
+        <div class="container h-100">
+            <div class="row h-100" style="font-weight: bold;">
+                <div class="col-lg-7 my-auto">
+                    <div class="mx-auto header-content">
+                        <h1 class="mb-5" style="font-family: Lato, sans-serif;">Cheap chap, ajudando você a encontrar seu rolê favorito :)&nbsp;<br></h1><a class="btn btn-outline-primary btn-lg btn-xl js-scroll-trigger" role="button" href="/RegistroPessoaFisica" style="background: #7d6acd;color: rgb(255, 255, 255);border-color: rgb(125,106,205);font-size: 16px;font-weight: bold;">Cadastre-se</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 my-auto" style="justify-content: center;align-items: center;">
+                    <div class="text-center"><img src="assets/img/logo-icon-white.png" style="width: 300px;"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="text-center bg-primary download" id="download" style="background: url(&quot;assets/img/sobre_cheap_chap_2_dark.png&quot;);">
+        <div class="container">
+            <div class="row" style="color: rgb(255,255,255);">
+                <div class="col-md-8 mx-auto">
+                    <h2 class="section-heading">Sobre nós</h2>
+                    <p><br>Viemos revolucionar a forma como você organiza&nbsp;as suas festas e curte os seus eventos. Tudo com criptografia de ponta e integração com as suas<br>&nbsp;redes sociais!<br><br></p>
+                    <div class="d-flex flex-column justify-content-between mt-auto badges"><a class="badge-link" href="#"><img src="assets/img/google-play-badge.svg"></a><a class="badge-link" href="#" style="margin-top: 2rem;"><img src="assets/img/app-store-badge.svg"></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="features" class="features">
+        <div class="container">
+            <div class="text-center section-heading">
+                <h2>Soluções para seu evento e&nbsp;seu negócio.</h2>
+                <p class="text-muted">Fazemos a gestão de seu estabelecimento com dashboard iterativos e gráficos que o ajudam a tomar decisões importantes para seu business, com total segurança de seus dados e interconectividade com outras ferramentas.</p>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 my-auto">
+                    <div class="device-container"><img src="assets/img/4567334.jpg" style="width: 300px;"></div>
+                </div>
+                <div class="col-lg-8 my-auto">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="feature-item"><i class="fas fa-digital-tachograph text-primary"></i>
+                                    <h3>Dashboard em real-time</h3>
+                                    <p class="text-muted"><br>Confira a quantidade de ingressos, avaliação e outros dados importantes sobre seu evento.<br><br></p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="feature-item"><i class="icon-wallet text-primary"></i>
+                                    <h3>E-wallet - Organizador<br></h3>
+                                    <p class="text-muted">Venda seus ingressos de maneira digital, otimize o tempo de entrada e conquiste o seu cliente!<br></p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="feature-item"><i class="material-icons text-primary">security</i>
+                                    <h3>Segurança</h3>
+                                    <p class="text-muted">Tenha suas informações altamente seguras com criptografia de ponta a ponta.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="feature-item"><i class="icon-notebook text-primary"></i>
+                                    <h3>Faça sua reserva</h3>
+                                    <p class="text-muted">Faça reserva em restaurantes e tenha maior praticidade no pagamento, podendo efetuar tudo pelo seu dispositivo com nosso menu digital.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-xl-flex justify-content-xl-center align-items-xl-center">
+                                <div class="feature-item"><i class="fa fa-qrcode text-primary"></i>
+                                    <h3>Compre seu ingresso</h3>
+                                    <p class="text-muted">Aqui você poderá comprar seu ingresso e também repassá-lo caso queira, faça isso em minutos !</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer style="background: #2b223f;">
+        <footer class="footer-dark" style="background: rgb(43,34,63);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Suporte&nbsp; à eventos</a></li>
+                            <li><a href="#">Promoter</a></li>
+                            <li><a href="#">Gestão de capital</a></li>
+                            <li><a href="#">People networking</a></li>
+                            <li><a href="#">Gestão de eventos</a></li>
+                            <li><a href="#">Reserva de mesa</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Quem somos ?</a></li>
+                            <li><a href="#">Nosso time</a></li>
+                            <li><a href="#">Carreira</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3><strong>Cheap Chap Company</strong><br></h3>
+                        <p>Somos uma empresa focada na experiência dos usuários em suas atividades diárias como ir a eventos, efetuar pagamentos, fazer reservas em restaurantes e se divertir com a família. Somos a empresa que cuida da sua diversão.&nbsp; :)<br></p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Cheap Chap © 2021</p>
+            </div>
+        </footer>
+    </footer>
+    <script src="assets/js/jquery.min.js" th:src="@{/assets/js/jquery.min.js}"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js" th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+    <script src="assets/js/button-materialize.js" th:src="@{/assets/js/button-materialize.js}"></script>
+    <script src="assets/js/nav-bar.js" th:src="@{/assets/js/nav-bar.js}"></script>
+</body>
+
+</html>

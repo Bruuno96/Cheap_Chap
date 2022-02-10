@@ -1,5 +1,6 @@
 package com.project.cheapchap.model;
 
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
 
@@ -29,10 +30,6 @@ public class UsuarioFisico extends Usuario{
 	@Column(name = "ds_cpf", unique = true)
 	private String cpf;
 	
-	@NotBlank(message = "Dcoumento RG deve ser preenchido")
-	@Column(name = "ds_rg", unique = true)
-	private String rg;
-	
 	@NotBlank(message = "Campo necessário")
 	@Column(name="ds_genero")
 	private String genero;
@@ -40,7 +37,7 @@ public class UsuarioFisico extends Usuario{
 	@NotBlank(message = "Preencha com a data de seu nascimento")
 	@JsonFormat(pattern="dd/MM/yyyy")
     @DateTimeFormat(pattern="dd/MM/yyyy")
-    private String dataNascimento;
+    private Calendar dataNascimento;
 
 	@OneToMany(mappedBy = "usuarioFisico")
 	private List<Transacao> transacoes;
@@ -53,7 +50,7 @@ public class UsuarioFisico extends Usuario{
 
 	public UsuarioFisico(Long idUsuario, String nome, String ultimoNome, String username, String password, String email,
 			String telefone, byte[] fotoPerfil, Collection<Role> roles, Endereco endereco, Carteira carteira,
-			String cpf, String dataNascimento, List<Transacao> transacoes, List<Reserva> reservas) {
+			String cpf, Calendar dataNascimento, List<Transacao> transacoes, List<Reserva> reservas) {
 		super(idUsuario, nome, ultimoNome, username, password, email, telefone, fotoPerfil, roles, endereco, carteira);
 		this.cpf = cpf;
 		this.dataNascimento = dataNascimento;

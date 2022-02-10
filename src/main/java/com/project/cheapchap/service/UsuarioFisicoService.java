@@ -88,8 +88,5 @@ public class UsuarioFisicoService {
 		return usuarioFisicoRepository.findByTelefone(telefone);
 	}
 	
-	public String findByRg(String rg) {
-		return usuarioFisicoRepository.findByTelefone(rg);
-	}
-	
+
 }

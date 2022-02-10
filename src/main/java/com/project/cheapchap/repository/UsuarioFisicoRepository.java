@@ -23,9 +23,5 @@ public interface UsuarioFisicoRepository extends JpaRepository<UsuarioFisico, Lo
 	@Transactional(readOnly=true)
 	@Query("Select u.telefone from Usuario u where u.telefone = ?1")
 	String findByTelefone(String telefone);
-	
-	@Transactional(readOnly=true)
-	@Query("Select u.rg from Usuario u where u.rg = ?1")
-	String findByRg(String rg);
 
 }

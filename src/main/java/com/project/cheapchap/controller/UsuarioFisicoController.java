@@ -8,6 +8,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import com.project.cheapchap.Utils.ValidaCPF;
+import com.project.cheapchap.Utils.ValidaRG;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -38,12 +39,10 @@ public class UsuarioFisicoController {
 			model.setViewName("RegistroPessoaFisica");
 			return "redirect:/RegistroPessoaFisica";
 		}else {
-
 			Optional<UsuarioFisico> u = fisicoService.findByEmail(usuarioFisico.getEmail());			
 			Optional<UsuarioFisico> cpf = fisicoService.findByCpf(usuarioFisico.getCpf());
-			
 			if (!u.isEmpty() && cpf != null && !ValidaCPF.isCPF(usuarioFisico.getCpf())) {
-				redirAttrs.addFlashAttribute("message", "Email já cadastrado");
+				redirAttrs.addFlashAttribute("message", "Email já cadastrado ou inválido");
 				model.setViewName("RegistroPessoaFisica");
 				return "redirect:/RegistroPessoaFisica";
 			}else if(cpf != null || !ValidaCPF.isCPF(usuarioFisico.getCpf())) {

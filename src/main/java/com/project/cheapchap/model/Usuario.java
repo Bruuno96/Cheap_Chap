@@ -19,6 +19,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import org.springframework.format.annotation.NumberFormat;
@@ -61,6 +62,7 @@ public class Usuario implements UserDetails, Serializable{
 
     @NotBlank(message = "Email obrigatório")
 	@Column(name = "ds_email", unique = true)
+	@Email(message = "Insira um email válido")
 	private String email;
 
     @NotBlank(message = "Celular deve ser preenchido")

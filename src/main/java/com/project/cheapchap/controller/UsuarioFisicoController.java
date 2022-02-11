@@ -3,20 +3,18 @@ package com.project.cheapchap.controller;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.time.LocalDate;
 import java.util.Optional;
 
 import javax.validation.Valid;
 
-import com.project.cheapchap.Utils.ValidaCPF;
-import com.project.cheapchap.Utils.ValidaRG;
+import com.project.cheapchap.model.Usuario;
+import com.project.cheapchap.model.UsuarioJuridico;
+import com.project.cheapchap.service.UsuarioJuridicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -32,28 +30,38 @@ public class UsuarioFisicoController {
 	@Autowired
 	private UsuarioFisicoService fisicoService;
 
-	
-	 @PostMapping("RegistroPessoaFisica")
-     public String save(@Valid UsuarioFisico usuarioFisico,BindingResult result,ModelAndView model, RedirectAttributes redirAttrs)  {
- 		if(result.hasErrors()) {
+	@Autowired
+	private UsuarioJuridicoService juridicoService;
+
+
+	@PostMapping("RegistroPessoaFisica")
+	public String save(@Valid UsuarioFisico usuarioFisico, BindingResult result, ModelAndView model, RedirectAttributes redirAttrs)  {
+		if(result.hasErrors()) {
 			model.setViewName("RegistroPessoaFisica");
 			return "redirect:/RegistroPessoaFisica";
 		}else {
-			Optional<UsuarioFisico> u = fisicoService.findByEmail(usuarioFisico.getEmail());			
-			Optional<UsuarioFisico> cpf = fisicoService.findByCpf(usuarioFisico.getCpf());
-			if (!u.isEmpty() && cpf != null && !ValidaCPF.isCPF(usuarioFisico.getCpf())) {
+			Optional<UsuarioJuridico> u = juridicoService.findByEmail(usuarioFisico.getEmail());
+			Optional<UsuarioFisico> cnpj = fisicoService.findByCpf(usuarioFisico.getCpf());
+			Optional<UsuarioFisico> telefone = fisicoService.findByTelefone(usuarioFisico.getTelefone());
+			if (u.isPresent()) {
 				redirAttrs.addFlashAttribute("message", "Email já cadastrado ou inválido");
 				model.setViewName("RegistroPessoaFisica");
 				return "redirect:/RegistroPessoaFisica";
-			}else if(cpf != null || !ValidaCPF.isCPF(usuarioFisico.getCpf())) {
-				redirAttrs.addFlashAttribute("message2", "Cpf já cadastrado ou inválido");
+			}else if(cnpj.isPresent()) {
+				System.out.println("erro cnpj");
+				redirAttrs.addFlashAttribute("message2", "CNPJ já cadastrado ou inválido");
 				return "redirect:/RegistroPessoaFisica";
-			}else {
+			}else if(telefone.isPresent()){
+				System.out.println("erro telefone");
+				redirAttrs.addFlashAttribute("message3", "Telefone já cadastrado");
+				return "redirect:/RegistroPessoaFisica";
+
+			} else {
 				fisicoService.create(usuarioFisico);
 				model.setViewName("index");
 				return "index";
-				}
 			}
+		}
 	}
 	 
 	 @GetMapping("usuarioFisico/{imagem}")

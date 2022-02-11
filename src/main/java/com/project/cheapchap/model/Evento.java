@@ -27,14 +27,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@SequenceGenerator(allocationSize = 1, sequenceName = "SQ_EVENTO", name = "sq_evento")
+@SequenceGenerator(allocationSize = 1, sequenceName = "SQ_EVENTO", name = "sevento")
 public class Evento implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name="cd_evento")
-	@GeneratedValue(generator = "sq_evento", strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "evento", strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name="nm_evento")

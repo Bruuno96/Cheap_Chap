@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.project.cheapchap.model.Usuario;
 import com.project.cheapchap.model.UsuarioFisico;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
@@ -19,5 +20,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
 	@Query("Select u from Usuario u where u.email = ?1")
 	Optional<Usuario> findByUserEmail(@Param("email")String email);
+
+
 
 }

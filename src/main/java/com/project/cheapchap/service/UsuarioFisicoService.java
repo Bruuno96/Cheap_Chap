@@ -3,6 +3,7 @@ package com.project.cheapchap.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.project.cheapchap.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -75,16 +76,16 @@ public class UsuarioFisicoService {
 		
 	}
 
-	public Optional<UsuarioFisico> findByEmail(String email) {
+	public Optional<Usuario> findByEmail(String email) {
 		return usuarioFisicoRepository.findByEmail(email);
 	}
-	
+
 	public Optional<UsuarioFisico> findByCpf(String cnpj) {
 		return usuarioFisicoRepository.findByCpf(cnpj);
 	}
 
 	
-	public String findByTelefone(String telefone) {
+	public Optional<UsuarioFisico> findByTelefone(String telefone) {
 		return usuarioFisicoRepository.findByTelefone(telefone);
 	}
 	

@@ -33,27 +33,27 @@ public class Endereco implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "endereco")
 	private Long idEndereco;
 	
-	@NotBlank(message = "Campo obrigatório")
+	@NotBlank(message = "Campo RUA obrigatório")
 	@Column(name="ds_rua", length = 50, nullable = false)
 	private String rua;
 	
-	@NotBlank(message = "Campo obrigatório")
+	@NotBlank(message = "Campo NÚMERO obrigatório")
 	@Column(name="nr_numero", length = 20, nullable = false)
 	private String numero;
 	
-	@NotBlank(message = "Campo obrigatório")
+	@NotBlank(message = "Campo BAIRRO obrigatório")
 	@Column(name="ds_bairro", length = 20, nullable = false)
 	private String bairro;
 	
-	@NotBlank(message = "Campo obrigatório")
+	@NotBlank(message = "Campo CIDADE obrigatório")
 	@Column(name="ds_cidade", length = 20, nullable = false)
 	private String cidade;
 	
-	@NotBlank(message = "Campo obrigatório")
+	@NotBlank(message = "Campo CEP obrigatório")
 	@Column(name="ds_cep", length = 10, nullable = false)
 	private String cep;
 	
-	@NotBlank(message = "Campo obrigatório")
+	@NotBlank(message = "Campo UF obrigatório")
 	@Column(name="ds_uf", length = 20, nullable = false)
 	private String uf;
 	

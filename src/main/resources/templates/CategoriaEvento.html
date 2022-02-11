@@ -41,27 +41,6 @@
 <body style="color: rgb(255,255,255);/*background: rgb(0,0,0);*//*border-color: rgb(0,0,0);*/font-family: Poppins, sans-serif;">
 
 	<nav th:insert="~{_template :: menu}"></nav>
-	
-    <!-- <nav>
-        <a class="logo" href="/"><img src="./assets/img/logo-horizontal.png" alt="" srcset=""></a>
-        <div class="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-        <ul class="nav-list">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="CategoriaEvento.html">Eventos</a></li>
-            <li><a href="CategoriaRestaurante.html">Restaurantes</a></li>
-            <li><a href="Smarticket.html">Smarticket</a></li>
-            <li><a href="MenuDigital.html">Menu Digital</a></li>
-            <li><a href="MinhaCarteira.html">Minha Área</a></li>
-            <li><a href="#">Favoritos</a></li>
-
-
-        </ul>
-        <img src="./assets/img/perfil.jpg" style="width:30px; border-radius: 20px;" alt="" srcset="">
-    </nav> -->
 
 
     <div id="slider" class="nivoSlider theme-default" style="margin-bottom: -4rem;">
@@ -160,9 +139,9 @@
         </div>
     </nav>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="./lib/Nivo-Slider-jQuery/jquery.nivo.slider.js"></script>
-    <script src="./assets/js/nav-bar.js"></script>
+    <script src="assets/js/jquery.min.js" th:src="@{/assets/js/jquery.min.js}"></script>
+    <script src="./lib/Nivo-Slider-jQuery/jquery.nivo.slider.js" th:src="@{//lib/Nivo-Slider-jQuery/jquery.nivo.slider.js}"></script>
+    <script src="./assets/js/nav-bar.js" th:src="@{/assets/js/nav-bar.js}"></script>
     <script>
         $('#slider').nivoSlider();
     </script>

@@ -28,8 +28,6 @@ public class IndexController {
 	 	@GetMapping("index")
 	    public ModelAndView index(HttpServletRequest request, Model model) {
 	        ModelAndView modelAndView = new ModelAndView("index");
-	        List<UsuarioFisico> users = fisicoService.findAll();
-			modelAndView.addObject("users", users);
 	        return modelAndView;
 	    }
 	 	

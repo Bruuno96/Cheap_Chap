@@ -73,22 +73,20 @@
                         <span th:errors="*{ultimoNome}"></span>
 
                         <label for="">CPF:</label>
-                        <input type="text" name="cpf" th:field="*{cpf}">
+                        <input type="text" name="cpf" th:field="*{cpf}" id="cpf">
                         <span th:errors="*{cpf}"></span>
               			<span th:if="${message2}" th:text="${message2}"></span>
-                        
 
-                        <label for="">RG:</label>
-                        <input type="text" name="rg" th:field="*{rg}">
-                        <span th:errors="*{rg}"></span>
 
                         <label for="">Data de nascimento:</label>
-                        <input type="text" name="dataNascimento" th:field="*{dataNascimento}">
+                        <input type="date" name="data" id="data">
                         <span th:errors="*{dataNascimento}"></span>
 
                         <label for="">Celular:</label>
-                        <input type="text" id="" name="telefone" th:field="*{telefone}">
+                        <input type="text" id="telefone" name="telefone" th:field="*{telefone}">
                         <span th:errors="*{telefone}"></span>
+                        <span th:if="${message3}" th:text="${message3}"></span>
+
 
                         <label for="">Genero:</label>
                         <select th:field="*{genero}">
@@ -109,7 +107,7 @@
 
 
                         <label for="">CEP:</label>
-                        <input type="text" name="cep" th:field="*{endereco.cep}">
+                        <input type="text" name="cep" id="cep" th:field="*{endereco.cep}">
                         <span th:errors="*{endereco.cep}"></span>
 
                         <label for="">Rua:</label>
@@ -168,7 +166,12 @@
     });
 
     $(document).ready(function () {
-        $('#cep').mask('99999-99');
+        $('#cep').mask('99999-999');
+        return false;
+    });
+
+    $(document).ready(function () {
+        $('#telefone').mask('(99)99999-9999');
         return false;
     });
 </script>

@@ -1,5 +1,6 @@
 package com.project.cheapchap.model;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
@@ -34,10 +35,10 @@ public class UsuarioFisico extends Usuario{
 	@Column(name="ds_genero")
 	private String genero;
 	
-	@NotBlank(message = "Preencha com a data de seu nascimento")
 	@JsonFormat(pattern="dd/MM/yyyy")
     @DateTimeFormat(pattern="dd/MM/yyyy")
-    private Calendar dataNascimento;
+	@Column(name = "dt_nascimento")
+    private LocalDate dataNascimento;
 
 	@OneToMany(mappedBy = "usuarioFisico")
 	private List<Transacao> transacoes;
@@ -50,7 +51,7 @@ public class UsuarioFisico extends Usuario{
 
 	public UsuarioFisico(Long idUsuario, String nome, String ultimoNome, String username, String password, String email,
 			String telefone, byte[] fotoPerfil, Collection<Role> roles, Endereco endereco, Carteira carteira,
-			String cpf, Calendar dataNascimento, List<Transacao> transacoes, List<Reserva> reservas) {
+			String cpf, LocalDate dataNascimento, List<Transacao> transacoes, List<Reserva> reservas) {
 		super(idUsuario, nome, ultimoNome, username, password, email, telefone, fotoPerfil, roles, endereco, carteira);
 		this.cpf = cpf;
 		this.dataNascimento = dataNascimento;

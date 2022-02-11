@@ -2,9 +2,13 @@ package com.project.cheapchap.controller;
 
 import javax.validation.Valid;
 
+import com.project.cheapchap.Utils.ValidaCNPJ;
+import com.project.cheapchap.model.UsuarioFisico;
+import com.project.cheapchap.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,6 +16,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.cheapchap.model.UsuarioJuridico;
 import com.project.cheapchap.service.UsuarioJuridicoService;
+
+import java.time.LocalDate;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/")
@@ -22,31 +29,41 @@ public class UsuarioJuridicoController {
 	@Autowired
 	private UsuarioJuridicoService juridicoService;
 
-	
-	 @PostMapping("RegistroPessoaJuridica")
-     public String save(@Valid UsuarioJuridico usuarioJuridico,BindingResult result,ModelAndView model, RedirectAttributes redirAttrs)  {
- 		if(result.hasErrors()) {
+
+
+	@PostMapping("RegistroPessoaJuridica")
+	public String save(@Valid UsuarioJuridico usuarioJuridico, BindingResult result, ModelAndView model, RedirectAttributes redirAttrs)  {
+		if(result.hasErrors()) {
 			model.setViewName("RegistroPessoaJuridica");
 			return "redirect:/RegistroPessoaJuridica";
 		}else {
-
-			UsuarioJuridico u = juridicoService.findByUserEmail(usuarioJuridico.getEmail());			
-			UsuarioJuridico findByCnpj = juridicoService.findByCnpj(usuarioJuridico.getCnpj());
-			System.out.println("CNPJ encontrado: "+findByCnpj);
-			if (u.getCnpj()  != null ) {			
-				redirAttrs.addFlashAttribute("message", "Email já cadastrado");
+			Optional<UsuarioJuridico> u = juridicoService.findByEmail(usuarioJuridico.getEmail());
+			Optional<UsuarioJuridico> cnpj = juridicoService.findByCnpj(usuarioJuridico.getCnpj());
+			Optional<UsuarioJuridico> telefone = juridicoService.findByTelefone(usuarioJuridico.getTelefone());
+			if (u.isPresent()) {
+				System.out.println("erro erro email");
+				redirAttrs.addFlashAttribute("message", "Email já cadastrado ou inválido");
 				model.setViewName("RegistroPessoaJuridica");
 				return "redirect:/RegistroPessoaJuridica";
-			}else if(findByCnpj != null) {
-				redirAttrs.addFlashAttribute("message2", "Cpf já cadastrado");
+			}else if(cnpj.isPresent()) {
+				System.out.println("erro cnpj");
+				redirAttrs.addFlashAttribute("message2", "CNPJ já cadastrado ou inválido");
 				return "redirect:/RegistroPessoaJuridica";
-			}else {
-				juridicoService.create(usuarioJuridico);
-				model.setViewName("index");
-				return "index";
+			}else if(telefone.isPresent()){
+				System.out.println("erro telefone");
+				redirAttrs.addFlashAttribute("message3", "Telefone já cadastrado");
+				return "redirect:/RegistroPessoaJuridica";
+
+			} else {
+					juridicoService.create(usuarioJuridico);
+					model.setViewName("index");
+					return "index";
 				}
 			}
 	}
+}
+
+
 	 
 		 
 //	 	@GetMapping("usuarioFisico/{imagem}")
@@ -58,6 +75,3 @@ public class UsuarioJuridicoController {
 //	 		}
 //	 		return null;
 //	 	}
-	
-	
-}

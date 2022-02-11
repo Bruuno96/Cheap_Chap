@@ -31,11 +31,11 @@ public class UsuarioJuridico extends Usuario {
 	private String nomeFantasia;
 
 	@NotBlank(message = "Campo deve ser preenchido")
-	@Column(name = "ds_cnpj", length = 14)
+	@Column(name = "ds_cnpj")
 	private String cnpj;
 
 	@NotBlank(message = "Campo deve ser preenchido")
-	@Column(name = "nm_razao_social", length = 15)
+	@Column(name = "nm_razao_social")
 	private String razaoSocial;
 
 

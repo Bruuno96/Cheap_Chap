@@ -195,6 +195,16 @@ input[type="password"]{
     border-color: rgba(36, 29, 29, 0.226);
     font-family: formFamily;
 }
+input[type="date"]{
+    padding: 0.4rem;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.144);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-color: rgba(36, 29, 29, 0.226);
+    font-family: formFamily;
+}
 
 select{
     background-color: white;

@@ -2,6 +2,7 @@ package com.project.cheapchap.service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -82,12 +83,16 @@ public class UsuarioJuridicoService {
 	}
 
 
-    public UsuarioJuridico findByUserEmail(String email) {
+    public  Optional<UsuarioJuridico> findByEmail(String email){
 		return usuarioJuridicorepository.findByEmail(email);
-    }
+	}
 
-	public UsuarioJuridico findByCnpj(String cnpj) {
-		return usuarioJuridicorepository.findByCnpj(cnpj).orElseThrow(() -> new ObjectNotFoundException("CNPJ NAO ENCONTRADO"));
+	public Optional<UsuarioJuridico> findByCnpj(String cnpj) {
+		return usuarioJuridicorepository.findByCnpj(cnpj);
+	}
+
+	public Optional<UsuarioJuridico> findByTelefone(String telefone) {
+		return usuarioJuridicorepository.findByTelefone(telefone);
 	}
 
 }

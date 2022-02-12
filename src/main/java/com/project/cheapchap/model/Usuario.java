@@ -119,20 +119,22 @@ public class Usuario implements UserDetails, Serializable{
 	}
 
 	@Override
+	public String getPassword() {
+		return this.password;
+	}
+
+	@Override
 	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
@@ -157,5 +159,7 @@ public class Usuario implements UserDetails, Serializable{
 	public int hashCode() {
 		return Objects.hash(idUsuario);
 	}
+
+	
 
 }

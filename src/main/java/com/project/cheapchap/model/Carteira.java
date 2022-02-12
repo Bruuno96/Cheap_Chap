@@ -32,6 +32,5 @@ public class Carteira implements Serializable{
 	private Long idCarteira;
 	
 	@Column(name="vl_saldo", nullable = false)
-	private double saldo;
-	
+	private double saldo;	
 }

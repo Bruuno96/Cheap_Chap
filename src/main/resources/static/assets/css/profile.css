@@ -25,12 +25,14 @@ body{
 
 .right-div{
     width: 75%;
+    margin-bottom: 2rem;
 }
 
 .left-div{
     width: 25%;
-    
+
 }
+
 
 .container{
     display: flex;

@@ -23,13 +23,19 @@ public class IndexController {
 	
 		@Autowired
 		private UsuarioFisicoService fisicoService;
-		
-		
+
+
 	 	@GetMapping("index")
 	    public ModelAndView index(HttpServletRequest request, Model model) {
 	        ModelAndView modelAndView = new ModelAndView("index");
 	        return modelAndView;
 	    }
+
+		@GetMapping("new")
+		public ModelAndView dash(HttpServletRequest request, Model model) {
+			ModelAndView modelAndView = new ModelAndView("dashboardSideBar");
+			return modelAndView;
+		}
 	 	
 	 	
 	 	

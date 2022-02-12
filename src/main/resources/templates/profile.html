@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu perfil</title>
 
-    <link rel="stylesheet" href="./assets/css/nav-bar.css">
-    <link rel="stylesheet" href="./assets/css/profile.css">
+    <link rel="stylesheet" href="../static/assets/css/nav-bar.css" th:href="@{/assets/css/nav-bar.css}">
+    <link rel="stylesheet" href="../static/assets/css/profile.css" th:href="@{/assets/css/profile.css}">
     
 
 
@@ -29,10 +29,10 @@
 
         <div class="left-div">
 
-		<!-- LEFT MENU -->
-		<div th:include="_template-sub :: sub-menu"></div>
-
+            <!-- LEFT MENU -->
+            <div th:include="_template-sub :: sub-menu"></div>
         </div>
+
 
         <div class="right-div">
             
@@ -173,7 +173,7 @@
             });
     </script>
 
-    <script src="./assets/js/nav-bar.js"></script>
+    <script src="..static/assets/js/nav-bar.js"></script>
 </body>
 
 </html>

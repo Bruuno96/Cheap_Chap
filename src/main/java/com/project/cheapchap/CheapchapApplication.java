@@ -13,47 +13,49 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.project.cheapchap.service.EstabelecimentoService;
 import com.project.cheapchap.service.EventoService;
 import com.project.cheapchap.service.UsuarioJuridicoService;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
 @SpringBootApplication
 public class CheapchapApplication implements CommandLineRunner {
 	
 
-	@Autowired
-	private EnderecoRepository enderecoRepository;
-	
-	@Autowired
-	private UsuarioRepository userRepository;
-
-	@Autowired
-	private CarteiraRepository carteiraRepository;
-	
-	@Autowired
-	private UsuarioJuridicoService usuarioJuridicoService;
-	
-	@Autowired
-	private UsuarioRepository usuarioRepository;
-	
-	@Autowired
-	private CategoriaRepository categoriaRepository;
-	
-	
-	@Autowired
-	private EventoService eventoService;
-	
-	@Autowired
-	private EventoRepository eventoRepository;
-	
-	@Autowired
-	private UsuarioJuridicoRepository us;
-	
-	@Autowired
-	private EstabelecimentoService estabelecimentoService;
-	
-	@Autowired
-	private TipoIngressoRepository tipoIngressoRepository;
-
-	@Autowired
-	private RoleRepository roleRepository;
+//	@Autowired
+//	private EnderecoRepository enderecoRepository;
+//
+//	@Autowired
+//	private UsuarioRepository userRepository;
+//
+//	@Autowired
+//	private CarteiraRepository carteiraRepository;
+//
+//	@Autowired
+//	private UsuarioJuridicoService usuarioJuridicoService;
+//
+//	@Autowired
+//	private UsuarioRepository usuarioRepository;
+//
+//	@Autowired
+//	private CategoriaRepository categoriaRepository;
+//
+//
+//	@Autowired
+//	private EventoService eventoService;
+//
+//	@Autowired
+//	private EventoRepository eventoRepository;
+//
+//	@Autowired
+//	private UsuarioJuridicoRepository us;
+//
+//	@Autowired
+//	private EstabelecimentoService estabelecimentoService;
+//
+//	@Autowired
+//	private TipoIngressoRepository tipoIngressoRepository;
+//
+//	@Autowired
+//	private RoleRepository roleRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CheapchapApplication.class, args);

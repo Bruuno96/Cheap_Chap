@@ -48,16 +48,6 @@ public class UsuarioFisico extends Usuario{
 	
 	public UsuarioFisico() {
 	}
-
-	public UsuarioFisico(Long idUsuario, String nome, String ultimoNome, String username, String password, String email,
-			String telefone, byte[] fotoPerfil, Collection<Role> roles, Endereco endereco, Carteira carteira,
-			String cpf, LocalDate dataNascimento, List<Transacao> transacoes, List<Reserva> reservas) {
-		super(idUsuario, nome, ultimoNome, username, password, email, telefone, fotoPerfil, roles, endereco, carteira);
-		this.cpf = cpf;
-		this.dataNascimento = dataNascimento;
-		this.transacoes = transacoes;
-		this.reservas = reservas;
-	}
 }
 
 

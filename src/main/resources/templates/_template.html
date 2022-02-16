@@ -9,7 +9,7 @@
         </div>
         <ul class="nav-list">
             <li><a href="/index">Início</a></li>
-            <li><a href="/eventos">Eventos</a></li>
+            <li><a href="/eventos" sec:authorize="hasRole('USER')">Eventos</a></li>
             <li><a href="/restaurantes">Restaurantes</a></li>
             <li><a href="/smartickets">Smarticket</a></li>
             <li><a href="/menu-digital">Menu Digital</a></li>

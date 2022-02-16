@@ -1,5 +1,6 @@
 package com.project.cheapchap.service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -8,6 +9,7 @@ import javax.validation.Valid;
 
 import com.project.cheapchap.model.*;
 import com.project.cheapchap.model.Endereco;
+import com.project.cheapchap.repository.RoleRepository;
 import com.project.cheapchap.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -26,19 +28,19 @@ public class UsuarioJuridicoService {
 	@Autowired
 	public UsuarioRepository usuarioRepository;
 
-
-	public UsuarioJuridicoService(UsuarioJuridicoRepository usuarioJuridicorepository) {
-		this.usuarioJuridicorepository = usuarioJuridicorepository;
-	}
+	@Autowired
+	RoleRepository roleRepository;
 
 	public UsuarioJuridico create(UsuarioJuridico u) {
 		
 		try {
 			Carteira c = new Carteira(null,0.00);
 			u.setCarteira(c);
-			u.setRoles(u.getRoles());
 			String password = u.getPassword();
 			u.setPassword(new BCryptPasswordEncoder().encode(password));
+			Role business = roleRepository.findByName("BUSINESS");
+			u.addRole(business);
+			System.out.println(u.getRoles().isEmpty());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

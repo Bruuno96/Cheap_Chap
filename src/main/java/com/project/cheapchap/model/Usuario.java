@@ -1,24 +1,13 @@
 package com.project.cheapchap.model;
 
-import java.io.Serializable; 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 import javax.annotation.ManagedBean;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
@@ -29,12 +18,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import lombok.Data;
 import net.minidev.json.annotate.JsonIgnore;
 
-
 @Entity
 @SequenceGenerator(name = "sq_usuario", sequenceName = "SQ_USUARIO", allocationSize = 1)
-@Data
 @Inheritance(strategy = InheritanceType.JOINED)
-@ManagedBean
 public class Usuario implements UserDetails, Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -75,9 +61,14 @@ public class Usuario implements UserDetails, Serializable{
 	private byte[] fotoPerfil;
 	
 	private String nomeImagem;
-	
-	@ManyToMany(fetch = FetchType.EAGER)
-	private Collection<Role> roles;
+
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(name = "user_role", joinColumns = {
+			@JoinColumn(name = "id_user")
+	}, inverseJoinColumns = {
+			@JoinColumn(name = "id_role")
+	})
+	private List<Role> roles = new ArrayList<>();
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="endereco_id")
@@ -87,15 +78,15 @@ public class Usuario implements UserDetails, Serializable{
 	@JoinColumn(name = "id_carteira")
 	private Carteira carteira;
 
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return this.roles;
-	}
-	
-	public Usuario(Long idUsuario, String nome, String ultimoNome, String username, String password, String email,
-			String telefone, byte[] fotoPerfil, Collection<Role> roles, Endereco endereco, Carteira carteira) {
+
+
+	public Usuario() {
 		super();
-		this.idUsuario = idUsuario;
+	}
+
+	public Usuario(String nome, String ultimoNome, String username, String password, String email,
+				   String telefone, byte[] fotoPerfil, String nomeImagem, List<Role> roles, Endereco endereco,
+				   Carteira carteira) {
 		this.nome = nome;
 		this.ultimoNome = ultimoNome;
 		this.username = username;
@@ -103,24 +94,113 @@ public class Usuario implements UserDetails, Serializable{
 		this.email = email;
 		this.telefone = telefone;
 		this.fotoPerfil = fotoPerfil;
+		this.nomeImagem = nomeImagem;
 		this.roles = roles;
 		this.endereco = endereco;
 		this.carteira = carteira;
 	}
-	
-	
-	public Usuario() {
-		super();
+
+	public Long getIdUsuario() {
+		return idUsuario;
 	}
-	
-	@Override
-	public String getUsername() {
-		return this.email;
+
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getUltimoNome() {
+		return ultimoNome;
+	}
+
+	public void setUltimoNome(String ultimoNome) {
+		this.ultimoNome = ultimoNome;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	@Override
 	public String getPassword() {
-		return this.password;
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public byte[] getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+	public void setFotoPerfil(byte[] fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
+	public String getNomeImagem() {
+		return nomeImagem;
+	}
+
+	public void setNomeImagem(String nomeImagem) {
+		this.nomeImagem = nomeImagem;
+	}
+
+	public void addRole(Role role){
+			 this.roles.add(role);
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+	public Carteira getCarteira() {
+		return carteira;
+	}
+
+	public void setCarteira(Carteira carteira) {
+		this.carteira = carteira;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return this.roles;
+	}
+
+	@Override
+	public String getUsername() {
+		return this.email;
 	}
 
 	@Override
@@ -160,6 +240,7 @@ public class Usuario implements UserDetails, Serializable{
 		return Objects.hash(idUsuario);
 	}
 
-	
-
+	public List<Role> getRoles() {
+		return roles;
+	}
 }

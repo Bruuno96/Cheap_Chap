@@ -14,15 +14,6 @@
     src: url(../fonts/Poppins-Thin.ttf);
 
 }
-body{    
-    background: rgb(255, 255, 255);
-}
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
 
 .divForm{
     box-shadow: 3px;
@@ -31,15 +22,14 @@ body{
     align-items: center;
     margin-top: 4rem;
 }
-
 .form-group{
 
     display: flex;
-    flex-direction: flex;
+    flex-direction: row;
 
 
 }
- ul li:nth-child(odd){
+ /*ul li:nth-child(odd){
     color:rgb(30, 15, 95);
  }
 
@@ -50,18 +40,19 @@ body{
  ul{
      text-decoration: none;
      list-style-type: none;
- }
+ }*/
 
 .form{
         padding: 3rem;
-        display: column;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        
+
 }
 
 .rightDivForm{
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     margin-left: 3rem;
 }
 

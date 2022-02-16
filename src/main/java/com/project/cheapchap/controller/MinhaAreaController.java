@@ -39,7 +39,7 @@ public class MinhaAreaController {
 	
 	@GetMapping("/dashboard")
 	public ModelAndView dashboard(HttpServletRequest http, Model model ) {
-		ModelAndView md = new ModelAndView("dashboard");
+		ModelAndView md = new ModelAndView("dashboardSideBar");
 		return md;
 	}
 	

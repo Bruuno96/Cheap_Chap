@@ -77,7 +77,14 @@ body.dark{
     display: flex;
     flex-wrap: wrap; 
     margin-top:1rem;
+    align-items: center;
 
+
+
+}
+
+.h1{
+    margin-bottom: 1rem;
 }
 
 /* o flex item que vem depois "quebre" para uma nova linha */
@@ -90,6 +97,23 @@ body.dark{
     background-color:rgba(0, 0, 0, 0);
     width:50%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color:rgb(218, 218, 218);
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: -1px -10px 100px rgb(172, 172, 172);
+    height:60%;
+}
+.container{
+
+}
+.box2{
+    background-color:rgba(163, 94, 94, 0);
+    width:35%;
+    display: flex;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
     border-radius: 50px;
@@ -97,23 +121,32 @@ body.dark{
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: -1px -10px 100px rgb(172, 172, 172);
     height:40%;
-}
+    margin-left:3rem;
 
-.box2{
-    background-color:rgba(255, 0, 242, 0);
-    width:50%;
+
 
 }
 
 .box3{
-    background-color:rgba(0, 255, 115, 0);
-    width:50%;
-    display:flex;
+    background-color:rgba(163, 94, 94, 0);
+    width:90%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color:rgb(218, 218, 218);
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: -1px -10px 100px rgb(172, 172, 172);
+    height:60%;
+
+    margin-top: 3rem;
 
 }
 .box4{
     background-color:rgba(255, 217, 0, 0);
     width:50%;
+    background-color: rebeccapurple;
 
 }
 

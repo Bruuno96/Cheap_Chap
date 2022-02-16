@@ -1,23 +1,15 @@
 package com.project.cheapchap;
 
+import java.util.Arrays;
 import java.util.Calendar;
 
+import com.project.cheapchap.model.*;
+import com.project.cheapchap.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.project.cheapchap.model.Categoria;
-import com.project.cheapchap.model.Endereco;
-import com.project.cheapchap.model.Evento;
-import com.project.cheapchap.model.UsuarioJuridico;
-import com.project.cheapchap.repository.CarteiraRepository;
-import com.project.cheapchap.repository.CategoriaRepository;
-import com.project.cheapchap.repository.EnderecoRepository;
-import com.project.cheapchap.repository.EventoRepository;
-import com.project.cheapchap.repository.TipoIngressoRepository;
-import com.project.cheapchap.repository.UsuarioJuridicoRepository;
-import com.project.cheapchap.repository.UsuarioRepository;
 import com.project.cheapchap.service.EstabelecimentoService;
 import com.project.cheapchap.service.EventoService;
 import com.project.cheapchap.service.UsuarioJuridicoService;
@@ -59,6 +51,9 @@ public class CheapchapApplication implements CommandLineRunner {
 	
 	@Autowired
 	private TipoIngressoRepository tipoIngressoRepository;
+
+	@Autowired
+	private RoleRepository roleRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CheapchapApplication.class, args);
@@ -68,9 +63,18 @@ public class CheapchapApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		
-	Endereco e = new Endereco(null,"Elisio Ferreira","358","São Lucas","São mateus","03964010","SP","Credicard Hall");
-	
-//		Categoria c1 = new Categoria(null,"POP");
+//	Endereco e = new Endereco(null,"Elisio Ferreira","358","São Lucas","São mateus","03964010","SP","Credicard Hall");
+
+//		Role admin = new Role("BUSINESS");
+//		Role user = new Role("USER");
+//		Role superAdmin = new Role("ADMIN");
+//		roleRepository.saveAll(Arrays.asList(admin,user,superAdmin));
+
+//		Role role_user = roleRepository.findByName("USER");
+//
+//		System.out.println(role_user.getName());
+
+		//		Categoria c1 = new Categoria(null,"POP");
 //		Categoria c2 = new Categoria(null,"Pagode");
 //		Categoria c3 = new Categoria(null,"Sertanejo");
 //		Categoria c4 = new Categoria(null,"Forró");

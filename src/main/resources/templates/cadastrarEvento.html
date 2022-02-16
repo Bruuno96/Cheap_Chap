@@ -4,103 +4,183 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/nav-bar-dash.css" th:href="@{/assets/css/nav-bar-dash.css}">
+    <link rel="stylesheet" href="style.css" th:href="@{/assets/css/cadastrarEvento.css}">
+
+    <!----===== Dashboard CSS ===== -->
+    <link rel="stylesheet" th:href="@{/assets/css/dashBoardSideBar.css}" href="../static/assets/css/dashBoardSideBar.css">
     <link rel="stylesheet" href="./assets/css/dashboard.css" th:href="@{/assets/css/dashboard.css}">
-    <link rel="stylesheet" href="./assets/css/cadastrarEvento.css" class="x" th:href="@{/assets/css/cadastrarEvento.css}">
+
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
 
     
     <title>Dashboard</title>
 </head>
 <body>
-    
-	<nav th:include="_template-dashboard :: menu-dashboard"></nav>
-
-    <div class="container">
-
-        <div class="divForm">
-
-            <form action="" class="form">
-                
-                <div class="form-group">
-
-                    <div style="display:flex;flex-direction:column;">
-
-                    <h2>Cadastrar Evento</h2>
-
-                    <label for="">Nome do evento</label>
-                    <input type="text" name="name" id="" required>
-
-                    <label for="">Data início:</label>
-                    <input type="date" name="dataInicio" id="" required>
-
-                    <label for="">Data término:</label>
-                    <input type="date" name="dataTermino" id="" required>
-
-                    <label for="">Descrição:</label>
-                    <textarea name="descricao" id="" cols="30" rows="10" required></textarea>
-
-                    </div>
-
-                    <div class="rightDivForm">
-                        <label for="">Banner:</label>
-                        <input type="file" name="nome" id="" required>
-
-                        <label for="">Categoria:</label>
-                        <select name="" id="">
-                            <option value="pop">POP</option>
-                            <option value="pop">PAGODE</option>
-                            <option value="pop">LGBTQIA+</option>
-                            <option value="pop">ROCK</option>
-                            <option value="pop">RAVE</option>
-                            <option value="pop">SERTANEJO</option>
-                            <option value="pop">DIVERSOS</option>
-                        </select>
-                    </div>
-                    
-
-                </div>
-
-                <div>
-                    <button type="submit" class="BuyBtton">Cadastrar</button>
-               </div>
-               
-
-            </form>
-            
+<nav class="sidebar close">
+    <header>
+        <div class="image-text">
+            <div class="text logo-text">
+                <img src="../static/assets/img/logo-icon-white.png"  th:src="@{/assets/img/logo-icon-white.png}" alt="" srcset="" class="logo">
+            </div>
         </div>
 
-        <div style="margin-left: 5rem;">
-            <img src="./assets/img/just-image (1).png" class="graphic" alt="" srcset="" style="width:500px;">
-            <ul>
-                <li>- Após criar um evento, crie seus tipos de ingressos</li>
-                <li>- Coloque os preços em cada tipo e seu estoque</li>
-                <li>- Acompanhe suas vendas no dashboard</li>
-                <li>- Faça sua retirada</li>
+        <i class='bx bx-chevron-right toggle'></i>
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-log-in icon' ></i>
+                        <span class="text nav-text">Overview</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-party icon' ></i>
+                        <span class="text nav-text">Eventos</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-qr icon' ></i>
+                        <span class="text nav-text">Ingressos</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-restaurant icon'></i>
+                        <span class="text nav-text">Restaurantes</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-heart icon' ></i>
+                        <span class="text nav-text">Likes</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-wallet icon' ></i>
+                        <span class="text nav-text">Carteira</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
 
-		<!--<i>mudar</i> -->
-       
+        <div class="bottom-content">
+            <li class="">
+                <a href="#">
+                    <i class='bx bx-log-out icon' ></i>
+                    <span class="text nav-text">Logout</span>
+                </a>
+            </li>
+        </div>
     </div>
+
+</nav>
+
+<section class="home">
+
+    <div class="cabecalho">
+
+        <div class="titleHeader">
+            <h4>Bom dia, Bruno</h4>
+            <p>Quarta-feira, 2 de Junho</p>
+        </div>
+
+
+    </div>
+
+    <div class="graphic">
+
+        <div class="container">
+
+            <div class="divForm">
+
+                <form action="" class="form">
+
+                    <div class="form-group">
+
+                        <div style="display:flex;flex-direction:column;">
+
+                            <h2>Cadastrar Evento</h2>
+
+                            <label for="">Nome do evento</label>
+                            <input type="text" name="name" id="" required>
+
+                            <label for="">Data início:</label>
+                            <input type="date" name="dataInicio" id="" required>
+
+                            <label for="">Data término:</label>
+                            <input type="date" name="dataTermino" id="" required>
+
+                            <label for="">Descrição:</label>
+                            <textarea name="descricao" id="" cols="30" rows="10" required></textarea>
+
+                        </div>
+
+                        <div class="rightDivForm">
+                            <label for="">Banner:</label>
+                            <input type="file" name="nome" id="" required>
+
+                            <label for="">Categoria:</label>
+                            <select name="" id="">
+                                <option value="pop">POP</option>
+                                <option value="pop">PAGODE</option>
+                                <option value="pop">LGBTQIA+</option>
+                                <option value="pop">ROCK</option>
+                                <option value="pop">RAVE</option>
+                                <option value="pop">SERTANEJO</option>
+                                <option value="pop">DIVERSOS</option>
+                            </select>
+                        </div>
+
+
+                    </div>
+
+                    <div>
+                        <button type="submit" class="BuyBtton">Cadastrar</button>
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+</section>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="./assets/js/nav-bar.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.js"></script>
-    <script src="./assets/js/customMask.js"></script>
-    <script>
-        $(document).ready(function() {
+<script>
+    const body = document.querySelector('body'),
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeText = body.querySelector(".mode-text");
 
-            $('i').on('click',function(e) {
 
-                var x = $('head x');
+    toggle.addEventListener("click" , () =>{
+        sidebar.classList.toggle("close");
+    })
 
-                $('head x').remove();
-                $('head').append('<link rel="stylesheet" href="./assets/css/cadastrar-evento-darkmode.css">');
-                $('.graphic').attr('src','./assets/img/esseaqui.png')
-            })
-            
-        })
-    </script>
+    searchBtn.addEventListener("click" , () =>{
+        sidebar.classList.remove("close");
+    })
+</script>
 </body>
 </html>

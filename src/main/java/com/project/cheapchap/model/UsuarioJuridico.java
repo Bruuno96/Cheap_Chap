@@ -51,18 +51,5 @@ public class UsuarioJuridico extends Usuario {
 	public UsuarioJuridico() {
 
 	}
-	
-	public UsuarioJuridico(Long idUsuario, String nome, String ultimoNome, String username, String password,
-			String email, String telefone, byte[] fotoPerfil, Collection<Role> roles, Endereco endereco,
-			Carteira carteira, String nomeFantasia, String cnpj, String razaoSocial, List<Transacao> transacoes,
-			Set<Estabelecimento> estabelecimentos, Set<Evento> eventos) {
-		super(idUsuario, nome, ultimoNome, username, password, email, telefone, fotoPerfil, roles, endereco, carteira);
-		this.nomeFantasia = nomeFantasia;
-		this.cnpj = cnpj;
-		this.razaoSocial = razaoSocial;
-		this.transacoes = transacoes;
-		this.estabelecimentos = estabelecimentos;
-		this.eventos = eventos;
-	}	
 }
 

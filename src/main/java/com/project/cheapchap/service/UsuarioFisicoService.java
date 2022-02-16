@@ -1,42 +1,37 @@
 package com.project.cheapchap.service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import com.project.cheapchap.model.Usuario;
+import com.project.cheapchap.model.*;
+import com.project.cheapchap.model.Endereco;
+import com.project.cheapchap.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.project.cheapchap.controller.api.exception.ObjectNotFoundException;
-import com.project.cheapchap.model.Carteira;
-import com.project.cheapchap.model.Endereco;
-import com.project.cheapchap.model.UsuarioFisico;
 import com.project.cheapchap.repository.UsuarioFisicoRepository;
 
 @Service
 public class UsuarioFisicoService {
 
 	@Autowired
-	private UsuarioFisicoRepository usuarioFisicoRepository;
+	public UsuarioFisicoRepository usuarioFisicoRepository;
 
+	@Autowired
+	private 	RoleRepository roleRepository;
 	
 	public UsuarioFisico create (UsuarioFisico u) {
-		
-		try {
 			Carteira c = new Carteira(null,0.00);
 			u.setCarteira(c);
 			String password = u.getPassword();
 			u.setPassword(new BCryptPasswordEncoder().encode(password));
-			u.setRoles(u.getRoles());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		
-		return usuarioFisicoRepository.save(u);
-
+			Role roleUser = roleRepository.findByName("USER");
+			u.addRole(roleUser);
+			return usuarioFisicoRepository.save(u);
 	}
 	
 	public UsuarioFisico findById(Long id) {

@@ -1,42 +1,96 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/assets/css/dashBoardSideBar.css}" href="../static/assets/css/dashBoardSideBar.css">
+<link rel="stylesheet" href="./assets/css/dashboard.css" th:href="@{/assets/css/dashboard.css}">
 
-<div class="right-div" th:fragment="mena">
+<!----===== Boxicons CSS ===== -->
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<nav class="sidebar close" th:fragment="dash-menu">
+    <header>
+        <div class="image-text">
+            <div class="text logo-text">
+                <img src="../static/assets/img/logo-icon-white.png"  th:src="@{/assets/img/logo-icon-white.png}" alt="" srcset="" class="logo">
+            </div>
+        </div>
 
-    <div class="div-saldo">
+        <i class='bx bx-chevron-right toggle'></i>
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-log-in icon' ></i>
+                        <span class="text nav-text">Overview</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-party icon' ></i>
+                        <span class="text nav-text">Eventos</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-qr icon' ></i>
+                        <span class="text nav-text">Ingressos</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-restaurant icon'></i>
+                        <span class="text nav-text">Restaurantes</span>
+                    </a>
+                </li>
 
 
-        <div style="padding: 1rem;">Saldo em carteira</div>
-        <input name="vd_ga" id="vd_ga" class="real input_geral" type="text" disabled value="456679" style="display:flex;color:aliceblue;text-align:center;font-size:40px;background-color:rgba(255, 255, 255, 0);" />
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-heart icon' ></i>
+                        <span class="text nav-text">Likes</span>
+                    </a>
+                </li>
 
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-wallet icon' ></i>
+                        <span class="text nav-text">Carteira</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="bottom-content">
+            <li class="">
+                <a href="#">
+                    <i class='bx bx-log-out icon' ></i>
+                    <span class="text nav-text">Logout</span>
+                </a>
+            </li>
+        </div>
     </div>
 
-    <div class="dados-conta">
-
-        <form action="" class="form">
-
-            <div>
-
-                <h3>Dados de Acesso</h3>
-
-                <label for="">Email:</label>
-                <input type="text" value="brunotkd96@gmail.com">
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const body = document.querySelector('body'),
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeText = body.querySelector(".mode-text");
 
 
-                <label for="">Senha:</label>
-                <input type="password" value="123456789">
+    toggle.addEventListener("click" , () =>{
+        sidebar.classList.toggle("close");
+    })
 
-                <label for="">Confirmar senha:</label>
-                <input type="password" value="123456789">
-
-
-
-            </div>
-
-
-
-
-
-
-</div>
+    searchBtn.addEventListener("click" , () =>{
+        sidebar.classList.remove("close");
+    })
+</script>
 
 </html>

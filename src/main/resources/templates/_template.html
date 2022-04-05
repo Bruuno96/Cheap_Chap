@@ -26,11 +26,10 @@
 <!--            </ul>-->
 
             <ul class="nav-list" sec:authorize="isAuthenticated()">
-
+                <img th:src="@{/mostrarImagem/{imagem}(imagem=${#authentication.getPrincipal().getNomeImagem()})}" style="width: 50px; height: 50px;border-radius: 25px"/>
                 <li style="font-weight: bold;color: white">
                     <a>Olá,</a>
                     <a th:text="${#authentication.getPrincipal().getNome()}" style="margin-left: 5px"></a>
-
                 </li>
 
                 <li style="font-weight: bold;">

@@ -19,7 +19,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.project.cheapchap.model.Endereco;
 import com.project.cheapchap.model.Evento;
-import com.project.cheapchap.repository.EventoRepository;
 import com.project.cheapchap.service.EventoService;
 
 @RestController

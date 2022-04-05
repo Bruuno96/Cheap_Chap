@@ -2,9 +2,7 @@ package com.project.cheapchap.service;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Collectors;
-
+import com.project.cheapchap.repository.EventoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
@@ -12,12 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.project.cheapchap.model.Endereco;
 import com.project.cheapchap.model.Evento;
-import com.project.cheapchap.repository.EventoRepository;
 
 @Service
 public class EventoService {
 
-	
 	@Autowired
 	private EventoRepository eventoRepository;
 	

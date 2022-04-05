@@ -3,6 +3,8 @@ package com.project.cheapchap.controller;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -15,9 +17,11 @@ import com.project.cheapchap.model.Usuario;
 import com.project.cheapchap.model.UsuarioJuridico;
 import com.project.cheapchap.service.UsuarioJuridicoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -28,7 +32,7 @@ import com.project.cheapchap.service.UsuarioFisicoService;
 @RequestMapping("/")
 public class UsuarioFisicoController {
 
-	public static String FOLDER_PATH = "/home/bruno/Desktop/CheapChapProject/backend/cheapchap/src/main/java/com/project/cheapchap/Imagens";
+	public static String FOLDER_PATH = "C:\\Users\\Windows 10\\OneDrive\\Área de Trabalho\\ECLIPSE\\CheapChap\\Cheap_Chap\\src\\main\\java\\com\\project\\cheapchap\\Imagens\\";
 
 	@Autowired
 	private UsuarioFisicoService fisicoService;
@@ -38,7 +42,12 @@ public class UsuarioFisicoController {
 
 
 	@PostMapping("RegistroPessoaFisica")
-	public String save(@Valid UsuarioFisico usuarioFisico, @ModelAttribute("data") String dataNascimento ,BindingResult result, ModelAndView model, RedirectAttributes redirAttrs) throws ParseException {
+	public String save(@Valid UsuarioFisico usuarioFisico,
+					   @ModelAttribute("data") String dataNascimento ,
+					   BindingResult result,
+					   ModelAndView model,
+					   RedirectAttributes redirAttrs,
+					   @RequestParam("file") MultipartFile arquivo) throws ParseException {
 		if(result.hasErrors()) {
 			model.setViewName("RegistroPessoaFisica");
 			return "redirect:/RegistroPessoaFisica";
@@ -61,7 +70,16 @@ public class UsuarioFisicoController {
 
 			} else {
 
-
+				try {
+					if(!arquivo.isEmpty()){
+						byte[] bytes = arquivo.getBytes();
+						Path path = Paths.get(FOLDER_PATH+arquivo.getOriginalFilename());
+						Files.write(path,bytes);
+						usuarioFisico.setNomeImagem(arquivo.getOriginalFilename());
+					}
+				}catch (IOException exception){
+					exception.printStackTrace();
+				}
 				LocalDate dt= LocalDate.parse(dataNascimento);
 				usuarioFisico.setDataNascimento(dt);
 				fisicoService.create(usuarioFisico);
@@ -70,11 +88,12 @@ public class UsuarioFisicoController {
 		}
 	}
 	 
-	 @GetMapping("usuarioFisico/{imagem}")
+	 	@GetMapping("/mostrarImagem/{imagem}")
 	 	@ResponseBody
-	 	public byte[] exibirImagem(@PathVariable("imagem") String imagem) throws IOException {
+	 	public byte[] exibirImagem(@PathVariable("imagem") String imagem, Authentication authentication) throws IOException {
 	 		File imagemArquivo = new File(FOLDER_PATH + imagem);
-	 		if(imagem != null) {
+//			UsuarioFisico u = authentication.getPrincipal();
+			if(imagem != null) {
 	 			return Files.readAllBytes(imagemArquivo.toPath());
 	 		}
 	 		return null;

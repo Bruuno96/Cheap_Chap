@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 @EntityScan({"com.project.cheapchap.model"})
 @SpringBootApplication
 public class CheapchapApplication implements CommandLineRunner {
-	
+
 
 //	@Autowired
 //	private EnderecoRepository enderecoRepository;
@@ -38,14 +38,7 @@ public class CheapchapApplication implements CommandLineRunner {
 //
 //	@Autowired
 //	private UsuarioRepository usuarioRepository;
-//
-//
-//
-	@Autowired
-	private EventoService eventoService;
-//
-	@Autowired
-	private EventoRepository eventoRepository;
+
 //
 //	@Autowired
 //	private UsuarioJuridicoRepository us;
@@ -66,12 +59,12 @@ public class CheapchapApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-
-		UsuarioJuridico found = usuarioJuridicoService.findById(1L);
-		System.out.println("Usuario: "+found.getIdUsuario()+"\nNome: "+found.getNome());
-
-		List<Evento> byUsuarioJuridicoId = eventoService.findByUsuarioJuridicoId(1L);
-		byUsuarioJuridicoId.forEach((evento -> System.out.println("Evento"+evento.getNomeEvento()+" de usuario "+evento.getUsuarioJuridico().getIdUsuario())));
+//
+//		UsuarioJuridico found = usuarioJuridicoService.findById(1L);
+//		System.out.println("Usuario: "+found.getIdUsuario()+"\nNome: "+found.getNome());
+//
+//		List<Evento> byUsuarioJuridicoId = eventoService.findByUsuarioJuridicoId(1L);
+//		byUsuarioJuridicoId.forEach((evento -> System.out.println("Evento"+evento.getNomeEvento()+" de usuario "+evento.getUsuarioJuridico().getIdUsuario())));
 
 //		System.out.println("oi");
 

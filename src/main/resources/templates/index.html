@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
     <meta charset="utf-8">
@@ -40,7 +41,10 @@
             <div class="row h-100" style="font-weight: bold;">
                 <div class="col-lg-7 my-auto">
                     <div class="mx-auto header-content">
-                        <h1 class="mb-5" style="font-family: Lato, sans-serif;">Cheap chap, ajudando você a encontrar seu rolê favorito :)&nbsp;<br></h1><a class="btn btn-outline-primary btn-lg btn-xl js-scroll-trigger" role="button" href="/RegistroPessoaFisica" style="background: #7d6acd;color: rgb(255, 255, 255);border-color: rgb(125,106,205);font-size: 16px;font-weight: bold;">Cadastre-se</a>
+                        <h1 class="mb-5" style="font-family: Lato, sans-serif;">Cheap chap, ajudando você a encontrar seu rolê favorito :)&nbsp;<br></h1>
+                        <a sec:authorize="isAnonymous()" class="btn btn-outline-primary btn-lg btn-xl js-scroll-trigger" role="button" href="/RegistroPessoaFisica" style="background: #7d6acd;color: rgb(255, 255, 255);border-color: rgb(125,106,205);font-size: 16px;font-weight: bold;">Cadastre-se</a>
+                        <a sec:authorize="hasRole('ROLE_BUSINESS')" class="btn btn-outline-primary btn-lg btn-xl js-scroll-trigger" role="button" href="/lista" style="background: #7d6acd;color: rgb(255, 255, 255);border-color: rgb(125,106,205);font-size: 16px;font-weight: bold;">Crie seu evento</a>
+
                     </div>
                 </div>
                 <div class="col-lg-5 my-auto" style="justify-content: center;align-items: center;">

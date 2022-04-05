@@ -42,18 +42,18 @@
                     <h3>Dados de Acesso</h3>
 
                     <!-- EMAIL -->
-                    <label for="">Email:</label>
+                    <label>Email:</label>
                     <input type="text" name="email" th:field="*{email}" th:classappend="${#fields.hasErrors('email')}?invalid" id="email">
                     <span th:errors="*{email}"></span>
                     <span th:if="${message}" th:text="${message}"></span>
 
                     <!-- USERNAME -->
-                    <label for="">Username:</label>
+                    <label>Username:</label>
                     <input type="text" name="username" th:field="*{username}" id="username">
                     <span th:errors="*{username}"></span>
 
                     <!-- PASSWORD -->
-                    <label for="">Senha:</label>
+                    <label>Senha:</label>
                     <input type="password" name="password" th:field="*{password}" id="password">
                     <span th:errors="*{password}"></span>
 
@@ -65,30 +65,32 @@
 
                     <h3>Dados Pessoais</h3>
 
-                    <label for="">Nome:</label>
+                    <label>Nome:</label>
                     <input type="text" name="nome" th:field="*{nome}">
                     <span th:errors="*{nome}"></span>
 
-                    <label for="">Ultimo nome:</label>
+                    <label>Ultimo nome:</label>
                     <input type="text" name="ultimoNome" th:field="*{ultimoNome}">
                     <span th:errors="*{ultimoNome}"></span>
 
-                    <label for="">CNPJ:</label>
+                    <label>CNPJ:</label>
                     <input type="text" name="cnpj" th:field="*{cnpj}" id="cnpj">
                     <span th:errors="*{cnpj}"></span>
                     <span th:if="${message2}" th:text="${message2}"></span>
+                    <span th:if="${message4}" th:text="${message4}"></span>
 
-                    <label for="">Razão Social:</label>
+
+                    <label>Razão Social:</label>
                     <input type="text" name="razaoSo    cial" th:field="*{razaoSocial}" id="razaoSocial">
                     <span th:errors="*{razaoSocial}"></span>
 
-                    <label for="">Nome Fantasia:</label>
+                    <label>Nome Fantasia:</label>
                     <input type="text" name="nomeFantasia" th:field="*{nomeFantasia}" id="nomeFantasia">
                     <span th:errors="*{nomeFantasia}"></span>
 
 
 
-                    <label for="">Celular:</label>
+                    <label>Celular:</label>
                     <input type="text" id="telefone" name="telefone" th:field="*{telefone}">
                     <span th:errors="*{telefone}"></span>
                     <span th:if="${message3}" th:text="${message3}"></span>
@@ -99,31 +101,31 @@
                     <h3>Endereço</h3>
 
 
-                    <label for="">CEP:</label>
+                    <label>CEP:</label>
                     <input type="text" name="cep" id="cep" th:field="*{endereco.cep}">
                     <span th:errors="*{endereco.cep}"></span>
 
-                    <label for="">Rua:</label>
+                    <label>Rua:</label>
                     <input type="text" name="rua" th:field="*{endereco.rua}" id="rua">
                     <span th:errors="*{endereco.rua}"></span>
 
-                    <label for="">Número:</label>
+                    <label>Número:</label>
                     <input type="text" name="numero" th:field="*{endereco.numero}" id="numero">
                     <span th:errors="*{endereco.numero}"></span>
 
-                    <label for="">Bairro:</label>
+                    <label>Bairro:</label>
                     <input type="text" name="bairro" th:field="*{endereco.bairro}" id="bairro">
                     <span th:errors="*{endereco.bairro}"></span>
 
-                    <label for="">Cidade:</label>
+                    <label>Cidade:</label>
                     <input type="text" name="cidade" th:field="*{endereco.cidade}" id="cidade">
                     <span th:errors="*{endereco.cidade}"></span>
 
-                    <label for="">UF:</label>
+                    <label>UF:</label>
                     <input type="text" name="uf" th:field="*{endereco.uf}" id="uf">
                     <span th:errors="*{endereco.uf}"></span>
 
-                    <label for="">Complemento:</label>
+                    <label>Complemento:</label>
                     <input type="text" name="complemento" th:field="*{endereco.complemento}">
 
 
@@ -154,17 +156,9 @@
 	});
 
     $(document).ready(function () {
-        $('#cep').mask('99999-999');
+        $('#telefone').mask('(99)99999-9999');
         return false;
     });
-
-    $(document).ready(function () {
-        $('#telefone').mask('(99)9999-9999');
-        return false;
-    });
-
-
-
 </script>
 
     <script src="./assets/js/nav-bar.js"></script>

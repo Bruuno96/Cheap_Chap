@@ -1,4 +1,5 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity5">
 <body>
 
             <div class="div-menu" th:fragment="sub-menu">
@@ -35,7 +36,7 @@
                         <li>
                             <a href="#" class="l"><img src="./assets/img/money.png" style="width:13px; margin-right:0.5rem" alt="" srcset="">Reservas</a>
                         </li>
-                        <li>
+                        <li sec:authorize="hasRole('ROLE_BUSINESS')">
                             <a href="/dashboard" class="l"><img src="./assets/img/money.png" style="width:13px; margin-right:0.5rem" alt="" srcset="">Dashboard</a>
                         </li>
 

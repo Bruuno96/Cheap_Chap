@@ -3,7 +3,10 @@ package com.project.cheapchap.controller;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -35,7 +38,7 @@ public class UsuarioFisicoController {
 
 
 	@PostMapping("RegistroPessoaFisica")
-	public String save(@Valid UsuarioFisico usuarioFisico, BindingResult result, ModelAndView model, RedirectAttributes redirAttrs)  {
+	public String save(@Valid UsuarioFisico usuarioFisico, @ModelAttribute("data") String dataNascimento ,BindingResult result, ModelAndView model, RedirectAttributes redirAttrs) throws ParseException {
 		if(result.hasErrors()) {
 			model.setViewName("RegistroPessoaFisica");
 			return "redirect:/RegistroPessoaFisica";
@@ -57,8 +60,11 @@ public class UsuarioFisicoController {
 				return "redirect:/RegistroPessoaFisica";
 
 			} else {
+
+
+				LocalDate dt= LocalDate.parse(dataNascimento);
+				usuarioFisico.setDataNascimento(dt);
 				fisicoService.create(usuarioFisico);
-				model.setViewName("index");
 				return "index";
 			}
 		}

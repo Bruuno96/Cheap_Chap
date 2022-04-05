@@ -29,7 +29,7 @@ public class UsuarioFisicoService {
 			u.setCarteira(c);
 			String password = u.getPassword();
 			u.setPassword(new BCryptPasswordEncoder().encode(password));
-			Role roleUser = roleRepository.findByName("USER");
+			Role roleUser = roleRepository.findByName("ROLE_USER");
 			u.addRole(roleUser);
 			return usuarioFisicoRepository.save(u);
 	}

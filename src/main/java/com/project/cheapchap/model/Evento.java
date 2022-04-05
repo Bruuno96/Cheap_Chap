@@ -1,6 +1,7 @@
 package com.project.cheapchap.model;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Set;
 
@@ -19,10 +20,12 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Getter
 @Setter
@@ -42,14 +45,14 @@ public class Evento implements Serializable {
 	
 	@Column(name="ft_banner")
 	private String fotoBanner;
-	
+
 	@Column(name="dt_inicio")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Calendar dataInicio;
-	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDateTime dataInicio;
+
 	@Column(name="dt_fim")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Calendar dataTermino;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDateTime dataTermino;
 	
 	@Column(name="ds_descricao")
 	private String descricao;
@@ -68,13 +71,12 @@ public class Evento implements Serializable {
 	
 	@OneToMany(orphanRemoval = true, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Set<Ingresso> ingresso;
-	
-	@ManyToOne
-	@JoinColumn(name = "categoria_id")
-	private Categoria categoria;
 
-	public Evento(Long id, String nome, String fotoBanner, Calendar dataInicio, Calendar dataTermino, String descricao,
-			int numeroVagasEstacionamento, Set<Ingresso> ingresso,Categoria categoria,Endereco e) {
+	@Column(name = "categoria_id")
+	private String categoria;
+
+	public Evento(Long id, String nome, String fotoBanner, LocalDateTime dataInicio, LocalDateTime dataTermino, String descricao,
+			int numeroVagasEstacionamento, Set<Ingresso> ingresso,String categoria,Endereco e) {
 		super();
 		this.id = id;
 		this.nomeEvento = nome;

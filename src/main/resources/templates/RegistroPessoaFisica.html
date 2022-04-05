@@ -81,7 +81,7 @@
 
 
                         <label>Data de nascimento:</label>
-                        <input type="date" name="data" id="data">
+                        <input type="date" name="data" id="data" th:value="${#temporals.format(localDateTime, 'dd-MM-yyyy')}">
                         <span th:errors="*{dataNascimento}"></span>
 
                         <label>Celular:</label>
@@ -96,8 +96,10 @@
                             <option th:value="'MASCULINO'" th:text="MASCULINO"></option>
                             <option th:value="'FEMININO'" th:text="FEMININO"></option>
                             <option th:value="'OUTROS'" th:text="OUTROS"></option>
-                        </select> <span th:errors="*{genero}">
-                    </span> <label>Foto:</label>
+                        </select>
+                        <span th:errors="*{genero}"></span>
+
+                        <label>Foto:</label>
                         <input type="file" name="file"> <span
                             th:errors="*{fotoPerfil}"></span>
 

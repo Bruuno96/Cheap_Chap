@@ -29,7 +29,7 @@ public class EventoApi {
 	@Autowired
 	private EventoService eventoService;
 	
-	@PostMapping("/evento")
+		@PostMapping("/evento")
 	public ResponseEntity<Evento> register(@RequestBody @Valid Evento evento, UriComponentsBuilder ucb){
 		Evento created = eventoService.create(evento);
 			if(created == null) return ResponseEntity.badRequest().build();

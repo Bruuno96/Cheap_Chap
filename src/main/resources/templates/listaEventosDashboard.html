@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com -->
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/transferir.css">
+
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" th:href="@{/assets/css/dashBoardSideBar.css}" href="../static/assets/css/dashBoardSideBar.css">
+    <link rel="stylesheet" href="./assets/css/estilo-lista-eventos.css">
+    <link rel="stylesheet" th:href="@{/assets/css/listaEventosDashBoard.css}">
+
+
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="bodyClass">
+<nav class="sidebar close">
+    <header>
+        <div class="image-text">
+            <div class="text logo-text">
+                <img src="../static/assets/img/logo-icon-white.png"  th:src="@{/assets/img/logo-icon-white.png}" alt="" srcset="" class="logo">
+            </div>
+        </div>
+
+        <i class='bx bx-chevron-right toggle'></i>
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+                <li class="nav-link">
+                    <a href="/dashboard">
+                        <i class='bx bx-log-in icon' ></i>
+                        <span class="text nav-text">Overview</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="/lista">
+                        <i class='bx bx-party icon' ></i>
+                        <span class="text nav-text">Eventos</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-qr icon' ></i>
+                        <span class="text nav-text">Ingressos</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-restaurant icon'></i>
+                        <span class="text nav-text">Restaurantes</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-wallet icon' ></i>
+                        <span class="text nav-text">Finanças</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="/profile">
+                        <i class='bx bx-arrow-back icon' ></i>
+                        <span class="text nav-text">Voltar</span>
+                    </a>
+                </li>
+
+
+        </div>
+
+        <div class="bottom-content">
+            <li class="">
+                <a href="#">
+                    <i class='bx bx-log-out icon' ></i>
+                    <span class="text nav-text">Logout</span>
+                </a>
+            </li>
+        </div>
+    </div>
+
+</nav>
+
+<section class="home">
+
+    <div class="cabecalho">
+
+        <div class="titleHeader">
+            <h4>Bom dia, Bruno</h4>
+            <p>Quarta-feira, 2 de Junho</p>
+        </div>
+
+        <div class="createEvent">
+           <a onclick="acao()" href="#" style="color: white;">Criar evento</a>
+
+        </div>
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <h3>Cadastrar evento</h3>
+
+                <div onclick="fechar()" class="fechar">X</div>
+
+
+            </div>
+
+            <form th:action="@{/createEvent}" class="form-event"
+                  method="POST" th:object="${evento}"
+                  enctype="multipart/form-data">
+
+                <div class="div-left">
+
+                    <div class="div-evento">
+
+                    <label>Nome do evento:</label>
+                    <input type="text" name="nomeEvento" th:field="*{nomeEvento}">
+                    <span th:errors="*{nomeEvento}"></span>
+
+                    <label>Data Início:</label>
+                    <input type="date" name="dataInicio" id="dataInicio">
+
+                    <label>Hora Início:</label>
+                    <input type="time" id="horaInicio" name="horaInicio" required>
+
+                    <label>Data Término:</label>
+                    <input type="date" name="dataTermino" id="dataTermino">
+
+                    <label>Hora final:</label>
+                    <input type="time" id="horaFinal" name="horaFinal" required>
+
+                    <label>Descrição:</label>
+                    <textarea type="text" name="descricao" id="descricao"></textarea>
+
+                    <label>Número de vagas do estacionameto (OPCIONAL):</label>
+                    <input type="number" name="numeroVagasEstacionamento" id="numeroVagasEstacionamento">
+                    <span th:errors="*{numeroVagasEstacionamento}"></span>
+
+
+
+
+                </div>
+
+                </div>
+
+
+                <div class="div-right">
+
+                    <div class="div-endereco">
+
+                    <label>Categoria:</label>
+                        <select th:field="*{categoria}">
+                            <option value="" selected>Selecione...</option>
+                            <option th:value="'POP'" th:text="POP"></option>
+                            <option th:value="'ROCK'" th:text="ROCK"></option>
+                            <option th:value="'LGBT'" th:text="LGBT"></option>
+                        </select>
+
+
+
+                    <label>CEP:</label>
+                    <input type="text" name="cep" id="cep" th:field="*{endereco.cep}">
+                    <span th:errors="*{endereco.cep}"></span>
+
+
+                    <label>Rua:</label>
+                    <input type="text" name="rua" th:field="*{endereco.rua}">
+                    <span th:errors="*{endereco.rua}"></span>
+
+
+                    <label>Número:</label>
+                    <input type="text" name="numero" th:field="*{endereco.numero}">
+                    <span th:errors="*{endereco.numero}"></span>
+
+                    <label>Bairro:</label>
+                    <input type="text" name="bairro" th:field="*{endereco.bairro}">
+                    <span th:errors="*{endereco.bairro}"></span>
+
+
+
+
+
+                </div>
+                    <div class="div-endereco">
+
+                    <label>Cidade:</label>
+                    <input type="text" name="cidade" th:field="*{endereco.cidade}">
+                    <span th:errors="*{endereco.cidade}"></span>
+
+                    <label>UF:</label>
+                    <input type="text" name="uf" th:field="*{endereco.uf}">
+                    <span th:errors="*{endereco.uf}"></span>
+
+                    <label>Complemento:</label>
+                    <input type="text" name="complemento" th:field="*{endereco.complemento}">
+                </div>
+
+                </div>
+
+
+
+                <button type="submit" class="submit-button">Cadastrar</button>
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="principal">
+        <div th:each="x: ${lista}">
+            <div class="divEventos">
+                <a href="">
+                    <ul>
+                        <img src="./assets/img/3 - pop.jpg" class="img-responsive">
+                        <li th:text="${x.nomeEvento}"></li>
+                        <li class="local" th:text="${#temporals.format(x.dataInicio, 'dd/MM/yyyy HH:mm')}"></li>
+                        <li th:text="${x.endereco.complemento}"></li>
+                        <div class="more-details">
+                            <a href="/more-Details-Events">Mais detalhes</a>
+                        </div>
+                    </ul>
+                </a>
+            </div>
+        </div>
+
+<!--        <div>-->
+<!--            <div class="divEventos">-->
+<!--                <a href="">-->
+<!--                    <ul>-->
+<!--                        <img src="./assets/img/3 - pop.jpg" class="img-responsive">-->
+<!--                        <li>Grupo Revelação</li>-->
+<!--                        <li class="local">28 de Outubro de 2021</li>-->
+<!--                        <li>Villa country</li>-->
+<!--                        <div class="more-details">-->
+<!--                            <a href="/more-Details-Events">Mais detalhes</a>-->
+<!--                        </div>-->
+<!--                    </ul>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+
+
+    </div>
+
+</section>
+<script type="text/javascript" th:src="@{assets/js/jquery.min.js}"></script>
+<script>
+    const body = document.querySelector('body'),
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeText = body.querySelector(".mode-text");
+
+
+    toggle.addEventListener("click" , () =>{
+        sidebar.classList.toggle("close");
+    })
+
+    searchBtn.addEventListener("click" , () =>{
+        sidebar.classList.remove("close");
+    })
+
+    function acao(){
+        let modal = document.querySelector('.modal')
+        modal.style.display = 'block';
+
+    }
+
+
+    function fechar(){
+
+        let modal = document.querySelector('.modal')
+        modal.style.display = 'none';
+
+    }
+
+    $(document).ready(function () {
+        $('#dataInicio').mask('99/99/9999');
+        return false;
+    });
+
+    $(document).ready(function () {
+        $('#dataTermino').mask('99/99/9999');
+        return false;
+    });
+
+    $(document).ready(function () {
+        $('#cep').mask('99999-999');
+        return false;
+    });
+
+    $(document).ready(function () {
+        $('#telefone').mask('(99)99999-9999');
+        return false;
+    });
+</script>
+
+</body>
+</html>

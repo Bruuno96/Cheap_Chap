@@ -54,10 +54,8 @@ public class Estabelecimento implements Serializable {
 	@OneToMany(mappedBy = "estabelecimento")
 	private List<Reserva> reservas;
 	
-	@JsonIgnore
-	@ManyToOne(cascade = CascadeType.PERSIST)
-	@JoinColumn(name="cd_categoria")
-	private Categoria categoria;
+	@Column(name = "categoria_id")
+	private String categoria;
 
 	public Estabelecimento(String nomeFantasia, int quantidadeMesas, Endereco endereco, 
 			List<Reserva> reservas) {

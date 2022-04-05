@@ -2,6 +2,8 @@ package com.project.cheapchap.service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -53,4 +55,10 @@ public class EventoService {
 		endereco.setComplemento(e.getEndereco().getComplemento());
 		return eventoRepository.save(evento);
 	}
+
+	public List<Evento> findByUsuarioJuridicoId(Long id){
+		List<Evento> listEvent = eventoRepository.findByUsuarioJuridicoId(id);
+		return listEvent;
+	}
 }
+

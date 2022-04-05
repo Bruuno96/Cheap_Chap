@@ -38,7 +38,7 @@ public class UsuarioJuridicoService {
 			u.setCarteira(c);
 			String password = u.getPassword();
 			u.setPassword(new BCryptPasswordEncoder().encode(password));
-			Role business = roleRepository.findByName("BUSINESS");
+			Role business = roleRepository.findByName("ROLE_BUSINESS");
 			u.addRole(business);
 			System.out.println(u.getRoles().isEmpty());
 		} catch (Exception e) {

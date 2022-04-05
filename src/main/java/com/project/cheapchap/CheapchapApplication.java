@@ -1,7 +1,7 @@
 package com.project.cheapchap;
 
-import java.util.Arrays;
-import java.util.Calendar;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import com.project.cheapchap.model.*;
 import com.project.cheapchap.repository.*;
@@ -13,9 +13,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.project.cheapchap.service.EstabelecimentoService;
 import com.project.cheapchap.service.EventoService;
 import com.project.cheapchap.service.UsuarioJuridicoService;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
+@ComponentScan({"com.project.cheapchap.service"})
+@ComponentScan({"com.project.cheapchap.repository"})
+@EntityScan({"com.project.cheapchap.model"})
 @SpringBootApplication
 public class CheapchapApplication implements CommandLineRunner {
 	
@@ -29,21 +33,19 @@ public class CheapchapApplication implements CommandLineRunner {
 //	@Autowired
 //	private CarteiraRepository carteiraRepository;
 //
-//	@Autowired
-//	private UsuarioJuridicoService usuarioJuridicoService;
+	@Autowired
+	private UsuarioJuridicoService usuarioJuridicoService;
 //
 //	@Autowired
 //	private UsuarioRepository usuarioRepository;
 //
-//	@Autowired
-//	private CategoriaRepository categoriaRepository;
 //
 //
-//	@Autowired
-//	private EventoService eventoService;
+	@Autowired
+	private EventoService eventoService;
 //
-//	@Autowired
-//	private EventoRepository eventoRepository;
+	@Autowired
+	private EventoRepository eventoRepository;
 //
 //	@Autowired
 //	private UsuarioJuridicoRepository us;
@@ -54,8 +56,8 @@ public class CheapchapApplication implements CommandLineRunner {
 //	@Autowired
 //	private TipoIngressoRepository tipoIngressoRepository;
 //
-//	@Autowired
-//	private RoleRepository roleRepository;
+	@Autowired
+	private RoleRepository roleRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CheapchapApplication.class, args);
@@ -64,19 +66,33 @@ public class CheapchapApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		
+
+		UsuarioJuridico found = usuarioJuridicoService.findById(1L);
+		System.out.println("Usuario: "+found.getIdUsuario()+"\nNome: "+found.getNome());
+
+		List<Evento> byUsuarioJuridicoId = eventoService.findByUsuarioJuridicoId(1L);
+		byUsuarioJuridicoId.forEach((evento -> System.out.println("Evento"+evento.getNomeEvento()+" de usuario "+evento.getUsuarioJuridico().getIdUsuario())));
+
+//		System.out.println("oi");
+
+
+//		List<UsuarioJuridico> all = usuarioJuridicoService.findAll();
+//		List<UsuarioJuridico> collect = all.stream()
+//				.filter(u -> u.getEmail().equals("brunotkd96@gmail.com")).collect(Collectors.toList());
+
+
 //	Endereco e = new Endereco(null,"Elisio Ferreira","358","São Lucas","São mateus","03964010","SP","Credicard Hall");
 
-//		Role admin = new Role("BUSINESS");
-//		Role user = new Role("USER");
-//		Role superAdmin = new Role("ADMIN");
+//		Role admin = new Role("ROLE_BUSINESS");
+//		Role user = new Role("ROLE_USER");
+//		Role superAdmin = new Role("ROLE_ADMIN");
 //		roleRepository.saveAll(Arrays.asList(admin,user,superAdmin));
 
 //		Role role_user = roleRepository.findByName("USER");
 //
 //		System.out.println(role_user.getName());
 
-		//		Categoria c1 = new Categoria(null,"POP");
+//		Categoria c1 = new Categoria(null,"POP");
 //		Categoria c2 = new Categoria(null,"Pagode");
 //		Categoria c3 = new Categoria(null,"Sertanejo");
 //		Categoria c4 = new Categoria(null,"Forró");
@@ -87,7 +103,7 @@ public class CheapchapApplication implements CommandLineRunner {
 //		Categoria c9 = new Categoria(null,"Salgados");
 //		Categoria c10 = new Categoria(null,"Chinesa");
 //		Categoria c11 = new Categoria(null,"Lanches");
-//		Categoria c12 = new Categoria(null,"Saudável");	
+//		Categoria c12 = new Categoria(null,"Saudável");
 //		categoriaRepository.saveAll(Arrays.asList(c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12));
 //
 //		Categoria categoria = categoriaRepository.findById(1L).orElseThrow();

@@ -170,7 +170,7 @@ public class Usuario implements UserDetails, Serializable{
 	}
 
 	public void addRole(Role role){
-			 this.roles.add(role);
+				 this.roles.add(role);
 	}
 
 	public void setRoles(List<Role> roles) {
